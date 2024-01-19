@@ -1,0 +1,89 @@
+.greeting-heading {
+  text-align: center;
+  color: #333;
+}
+
+.demo-color {
+  height: 200px;
+  background-color: aliceblue;
+}
+
+.color-form {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.color-input {
+  flex: 1;
+  border: solid 1px transparent;
+  outline: none;
+  min-height: 68px;
+  font-size: x-large;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 5px;
+  transition: border-color 200ms ease-in-out;
+  box-shadow: 5px 5px 0.25rem rgba(0,0,0,0.3);
+}
+
+.color-input:hover {
+  border-color: #333;
+}
+
+.hex-input {
+  border-color: red;
+  color: red;
+}
+
+.btn-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.torgb-btn,
+.tohex-btn {
+  outline: none;
+  min-width: 48px;
+  min-height: 30px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: solid 1px transparent;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 200ms ease-in-out;
+  box-shadow: 5px 5px 0.25rem rgba(0,0,0,0.3);
+}
+
+.torgb-btn:hover,
+.tohex-btn:hover {
+  cursor: pointer;
+  border-color: #333;
+}
+
+.tohex-btn {
+  color: red;
+}
+
+.torgb-btn {
+  color: green;
+}
+
+.rgb-input {
+  border-color: green;
+  color: green;
+}
+
+@media (max-width: 576px) {
+  .color-form {
+    flex-direction: column;
+  }
+}
