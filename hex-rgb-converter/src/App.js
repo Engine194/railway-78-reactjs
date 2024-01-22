@@ -13,11 +13,14 @@ function App() {
           <button className="tohex-btn">
             <ArrowLeft height="24px" width="24px" />
           </button>
+          <button className="tohex-btn">
+            <ArrowLeft height="24px" width="24px" />
+          </button>
           <button className="torgb-btn">
             <ArrowRight height="24px" width="24px" />
           </button>
         </div>
-        <input className="color-input rgb-input" name="rgb" />
+        <input className="color-input rgb-input" name="rgb"/>
       </div>
     </div>
   );
