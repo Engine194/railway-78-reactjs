@@ -5,6 +5,7 @@ import ArrowRight from "./ArrowRight";
 import ColorInput from "./ColorInput";
 import ActionButton from "./ActionButton";
 import { COLOR_TYPE, generateColorInputProps } from "./utils";
+import UserForm from "./UserForm";
 
 function App() {
   const [hex, setHex] = useState("");
@@ -88,6 +89,57 @@ function App() {
         </div>
         <ColorInput {...rgbInputProps} />
       </div>
+
+
+    {/* <div className="sigin-form" >
+      <div className="login-form">
+        <h1 className="h1-form">LOGIN FORM</h1>
+
+        <div className="input-form">
+          FullName
+        <input placeholder="FullName"></input>
+        </div>
+
+        <div className="input-form">
+          Email
+        <input placeholder="Email"></input>
+        </div>
+
+        <div className="input-form">
+          UserName
+        <input placeholder="UserName"></input>
+        </div>
+
+        <div className="input-form">
+          <span>Gender</span> 
+        <p typeof="radio"></p>
+        </div>
+
+        <div className="input-form">
+          Birth Of Date
+        <input placeholder="Date of birth" type="date"></input>
+        </div>
+
+        <div className="input-form">
+        <textarea rows={5}>
+        </textarea>
+        </div>
+
+        <div className="button-form">
+        <button>Reset</button>
+        <button>Submit</button>
+        </div>
+        
+
+       
+
+
+
+        </div>
+    </div> */}
+    <UserForm/>
+
+
     </div>
   );
 }

@@ -114,3 +114,42 @@
     flex-direction: column;
   }
 }
+
+.login-form {
+
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid orange;
+  padding-top: 30px;
+
+}
+.sigin-form {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-form {
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  max-width: 400px;
+  padding-top: 20px;
+  min-width: 54px;
+  min-height: 60px;
+
+}
+
+.button-form {
+  padding-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.h1-form{
+  text-align: center;
+  color: cornflowerblue;
+}
