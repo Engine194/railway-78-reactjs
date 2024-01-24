@@ -5,6 +5,7 @@ import ArrowRight from "./ArrowRight";
 import ColorInput from "./ColorInput";
 import ActionButton from "./ActionButton";
 import { COLOR_TYPE, generateColorInputProps } from "./utils";
+import UserForm from "./UserForm.js"
 
 function App() {
   const [hex, setHex] = useState("");
@@ -88,6 +89,38 @@ function App() {
         </div>
         <ColorInput {...rgbInputProps} />
       </div>
+
+      {/* <form >
+        <div className="container">
+          <div>
+            <input name="fullname" type="text" placeholder="Fullname..."/>
+            <br/>
+
+            <input name="email" type="text" placeholder="Email..."/>
+            <br/>
+
+            <input name="username" type="text" placeholder="Username..."/>
+            <br/>
+
+            <button>Gender</button>
+            <input name="gender" type="radio"/> Male
+            <input name="gender" type="radio" /> Female
+            <br/>
+
+            <input name="date" type="date" placeholder="Date of birth..."/>
+            <br/>
+
+            <textarea rows={5} value="Favorite"/>
+            <br/>
+
+            <input name="reset" type="reset" value="Reset"/>
+            <input name="sumit" type="submit" onClick={() => {}} value="Sumit"/>
+          </div>
+          
+        </div>
+      </form> */}
+      <UserForm/>
+
     </div>
   );
 }
