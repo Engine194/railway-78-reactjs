@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { GENDER_TYPE } from "./utils";
 
 export default function UserForm() {
+  const [gender, setGender] = useState(GENDER_TYPE.FEMALE);
+
+  const handleChangeGender = (event) => {
+    const newVal = event.target.value;
+    setGender(newVal);
+  };
+
   return (
     <div className="user-form-container">
       <div className="user-form-inner-wrapper">
@@ -10,16 +18,29 @@ export default function UserForm() {
           <input className="text-input" type="text" placeholder="Username" />
 
           <div className="form-row">
-            <label htmlFor="gender">Gender:</label>
+            <label>Gender:</label>
             <div className="gender-group">
-              <div>
-                <input type="radio" name="gender" value={1} />
+              <label>
+                <input
+
+                  type="radio"
+                  name="gender"
+                  onChange={handleChangeGender}
+                  value={GENDER_TYPE.MALE}
+                  checked={gender === GENDER_TYPE.MALE}
+                />
                 Male
-              </div>
-              <div>
-                <input type="radio" name="gender" value={0} />
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="gender"
+                  onChange={handleChangeGender}
+                  value={GENDER_TYPE.FEMALE}
+                  checked={gender === GENDER_TYPE.FEMALE}
+                />
                 Female
-              </div>
+              </label>
             </div>
           </div>
           <div className="form-row">
@@ -29,8 +50,12 @@ export default function UserForm() {
           <textarea rows={5} />
 
           <div className="form-actions">
-            <button className="form-btn btn-reset" type="reset">Reset</button>
-            <button className="form-btn btn-submit" type="submit">Submit</button>
+            <button className="form-btn btn-reset" type="reset">
+              Reset
+            </button>
+            <button className="form-btn btn-submit" type="submit">
+              Submit
+            </button>
           </div>
         </form>
       </div>
