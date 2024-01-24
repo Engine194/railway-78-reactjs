@@ -5,6 +5,8 @@ import ArrowRight from "./ArrowRight";
 import ColorInput from "./ColorInput";
 import ActionButton from "./ActionButton";
 import { COLOR_TYPE, generateColorInputProps } from "./utils";
+import UserList from "./UserList";
+import UserForm from "./UserForm";
 
 function App() {
   const [hex, setHex] = useState("");
@@ -88,6 +90,8 @@ function App() {
         </div>
         <ColorInput {...rgbInputProps} />
       </div>
+      {/* <UserList/> */}
+      <UserForm/>
     </div>
   );
 }
