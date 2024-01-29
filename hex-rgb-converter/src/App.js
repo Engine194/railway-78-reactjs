@@ -61,6 +61,37 @@ function App() {
   const hexInputProps = colorPropsMap.get(COLOR_TYPE.HEX);
   const rgbInputProps = colorPropsMap.get(COLOR_TYPE.RGB);
 
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    gender: 'female',
+    dob: '',
+    favorite: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+  };
+
+  const handleReset = () => {
+    setFormData({
+      fullName: '',
+      email: '',
+      gender: 'female',
+      dob: '',
+      favorite: ''
+    });
+  };
+
   return (
     <div className="App">
       <h1 className="greeting-heading">Welcome to Hex-RGB Converter</h1>
@@ -88,6 +119,74 @@ function App() {
         </div>
         <ColorInput {...rgbInputProps} />
       </div>
+      <h1 className="greeting-heading">Registration Form</h1>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="fullName">Full Name:</label>
+        <input
+          type="text"
+          id="fullName"
+          name="fullName"
+          value={formData.fullName}
+          onChange={handleChange}
+          required
+        />
+
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+
+        <label>Gender:</label>
+        <label htmlFor="male">Male</label>
+        <input
+          type="radio"
+          id="male"
+          name="gender"
+          value="male"
+          checked={formData.gender === 'male'}
+          onChange={handleChange}
+        />
+
+        <label htmlFor="female">Female</label>
+        <input
+          type="radio"
+          id="female"
+          name="gender"
+          value="female"
+          checked={formData.gender === 'female'}
+          onChange={handleChange}
+        />
+
+        <label htmlFor="dob">Date of Birth:</label>
+        <input
+          type="date"
+          id="dob"
+          name="dob"
+          value={formData.dob}
+          onChange={handleChange}
+          required
+        />
+
+        <label htmlFor="favorite">Favorite:</label>
+        <textarea
+          id="favorite"
+          name="favorite"
+          rows="5"
+          value={formData.favorite}
+          onChange={handleChange}
+          required
+        ></textarea>
+
+        <button type="submit">Submit</button>
+        <button type="button" onClick={handleReset}>
+          Reset
+        </button>
+      </form>
     </div>
   );
 }
