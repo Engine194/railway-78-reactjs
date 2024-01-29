@@ -21,3 +21,11 @@ export const generateColorInputProps = (
   inputClassName,
   changeColor,
 });
+<<<<<<< HEAD
+=======
+
+export const GENDER_TYPE = {
+  MALE: "1",
+  FEMALE: "0",
+};
+>>>>>>> a04f3cf1fed6560d51de8008ce90dd10cf32c5c0
