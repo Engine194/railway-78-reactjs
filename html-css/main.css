@@ -1,0 +1,85 @@
+/* style sheet */
+
+
+/* Question 1 */
+
+.container-q1,
+.child-q1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Question 2 */
+
+.container-q2 {
+    display: flex;
+    align-items: center;
+    /* column-gap: 2em; */
+    justify-content: flex-start 16px;
+}
+
+.child-q2 {
+    width: 120px;
+}
+
+
+
+/* Question 3 */
+
+.container-q3 {
+    display: flex;
+    min-height: 300px;
+    max-width: 1200px;
+    margin: 0 auto; 
+    border: solid 2px gray;
+}
+
+.child-q3:nth-child(1) {
+    background-color: red;
+    margin-right: 20px;
+    
+}
+
+.child-q3:nth-child(2) {
+    background-color: blue;
+    margin-right: 20px;
+}
+
+.child-q3:nth-child(3) {
+    background-color: green;
+}
+
+.child-q3 {
+    flex: 1;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0.9rem, -8px 16px 43px rgba(0, 0, 0, 0.5);
+}
+
+
+.card {
+    margin: 20px 30px;
+    padding: 12px;
+    border: solid 2px gray;
+}
+
+.card-description {
+    color: white;
+}
+
+.card-description > p {
+    /* color: white; */
+}   
+
+.card-img {
+    width: 100%;
+    height: auto;
+}
+
+.card-link {
+    color: antiquewhite;
+    font-weight: 600;
+    font-style: italic;
+}
