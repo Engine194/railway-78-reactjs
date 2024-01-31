@@ -1,0 +1,35 @@
+.container-one{
+    height: 400px;
+    max-width: 680px;
+    margin: 0 auto;
+    border: solid 2px gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.child-one{
+    height: 48px;
+    align-items:center;
+}
+.child-three,
+.child-four{
+    flex: 1;
+    padding-left: 30px;
+    padding-bottom: 40px;
+    margin: 0 auto;
+    border: solid 1px gray;
+    
+}
+
+.container-two{
+    display: flex;
+    column-gap: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+
+}
+.child-two{
+    width: 100%;
+}
