@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 .container-q1,
 .child-q1 {
     display: flex;
@@ -18,9 +22,14 @@
 }
 
 .container-q3 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     display: flex;
     justify-content: center;
     align-items: stretch;
+    column-gap: 20px;
 }
 
 .container-text {
@@ -40,11 +49,16 @@
 }
 
 .card {
-    border: solid 2px gray;
-    margin: 10px;
+    border: solid 1px transparent;
+    border-radius: 5px;
     padding: 1.5rem;
     height: 100%;
     box-shadow: rgb(0 0 0 / 10%) 5px 5px 20px;
+    transition: border-color 300ms ease-in-out;
+}
+
+.card:hover {
+    border-color: gray;
 }
 
 .card-img {
