@@ -1,6 +1,7 @@
 .container {
     
     max-width: 680px; 
+    background-color: bisque;
     margin: 0 auto;
     border: solid 1px black;
 
@@ -20,6 +21,11 @@
     margin-bottom: 40px;
     margin-left: 30px;
     margin-right: 30px;
+    /* padding: 0 30px; */
+    padding-left: 30px;
+
+    padding-right: 30px;
+
 
     
 
@@ -38,18 +44,29 @@
 
 .form-input-1,
 .form-input-2 {
-    text-align: center;
+    /* text-align: center; */
+    padding-left: 40px;
+    border-radius: 5px;
 }
 
 input {
     margin-top: 15px;
     display: inline;
+
 }
 
 .reset {
     float: left;
+
 }
 
 .submit {
     float: right;
+    margin-right: 71px;
+}
+
+.reset:hover,
+.submit:hover {
+    cursor: pointer;
+    opacity: 0.5;
 }
