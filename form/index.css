@@ -4,10 +4,10 @@
 .container-all{
     margin-left: auto;
     margin-right: auto;
-
-border: 3px solid orange;
+border: 3px solid aquamarine;
 min-height: auto;
 max-width: 680px;
+background-color: beige;
 /* align-items: center; */
 /* justify-content: center; */
 }
@@ -30,7 +30,7 @@ max-width: 680px;
 
 .form-col{
 flex-grow: 1;
-border: 5px solid whitesmoke; 
+border: 5px solid wheat; 
 min-height: 400px;
 max-width: 300px;
 padding-top: 20px;
