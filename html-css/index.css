@@ -98,6 +98,7 @@ height: 100%;
 
 
 .card-link {
+    padding-bottom: 0px;
     display: flex;
     justify-content: end;
     font-size: larger;
