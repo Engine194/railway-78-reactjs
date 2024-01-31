@@ -1,0 +1,39 @@
+.container{
+     max-width:  680px;
+    height: auto;
+    border: solid 2px gray;
+    background-color: blanchedalmond;
+}
+.Register{
+    margin: auto;
+    text-align: center;
+}
+.form-all{
+    display: flex;
+    flex-grow: 1;
+}
+.form-1{
+    margin: 40px 30px;
+    border: solid 1px gray;
+}
+.form-1-child{
+    flex-direction: column;
+}
+.form-2{
+    margin: 40px 30px;
+    border: solid 1px gray;
+    flex-direction: column;
+
+}
+
+.input{
+    width: 90%;
+    margin: 7.5px 15px;
+}
+.gender{
+    margin: 0px 5% 0px 23%;
+}
+.button{
+    display: flex;
+    justify-content: space-evenly;
+}
