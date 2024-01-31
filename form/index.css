@@ -1,0 +1,10 @@
+.user-container{
+    max-width: 680px;
+}
+
+.user-information{
+    display: flex;
+    border: 100%;
+    align-content: stretch;
+
+}
