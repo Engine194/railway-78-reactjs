@@ -2,9 +2,14 @@
     box-sizing: border-box;
 }
 .container-all{
+    margin-left: auto;
+    margin-right: auto;
+
 border: 3px solid orange;
 min-height: auto;
 max-width: 680px;
+/* align-items: center; */
+/* justify-content: center; */
 }
 .register{
     align-items: center;
@@ -34,6 +39,7 @@ column-gap: 20px;
 
 .user-inf,
 .authentication{
+    padding-right: 20px;
     padding-left: 20px;
     display: flex;
     flex-direction: column;
@@ -43,7 +49,7 @@ column-gap: 20px;
 .button{
     padding-top: 30px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 
