@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+}
+
+.container-all{
+    border: solid 2px gray;
+    max-width: 680px;
+    min-height: 100px;
+    
+}
+
+.container-form {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    
+    
+}
+
+.form-col {
+    
+    padding-left: 30px;
+    padding-bottom: 40px;
+    margin: 20px;
+    border: solid 2px gray;
+    justify-content: center;
+    
+}
+
+.user-item{
+
+
+}
+
+.authen-item{
+    
+}
+
+.fullName-ip{
+    
+}
+.email-ip{
+
+}
+.phoneNumber-ip{
+
+}
+.birthDay{
+
+}
+.username-ip{
+
+}
+.password-ip{
+
+}
+.button{
+
+}
+.comnfirmPass-ip{
+
+}
+
