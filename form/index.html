@@ -8,33 +8,160 @@
   </head>
   <body>
     <header>
-      <h1>Learn about form</h1>
+      <h1 style="text-align: center">Learn about form</h1>
     </header>
     <main>
       <form class="container-all" style="margin: auto">
-        <h1 class="" style="text-align: center; margin-bottom: 40px;">Resgister New User</h1>
+        <h1 class="resgister" style="text-align: center; margin-bottom: 40px">
+          Resgister New User
+        </h1>
         <div class="container-form">
-            <div class="user-item form-col">
-            user-information
-            <input type="text" class="fullName-ip" name="fullName" placeholder="Full Name"/>
-            <input type="text" class="email-ip" />
-            <input type="text" class="phoneNumber-ip" />
-
-            <input type="text" class="birthDay" />
+          <div class="user-item form-col">
+            <h2 style="text-align: center; color: #0573b1">User-information</h2>
+            <div class="user-ip">
+              <input
+                type="text"
+                class="fullName-ip"
+                name="fullName"
+                placeholder="Full Name"
+              />
+              <input
+                type="text"
+                class="email-ip"
+                name="email"
+                placeholder="Email"
+              />
+              <input
+                type="text"
+                class="phoneNumber-ip"
+                name="phoneNumber"
+                placeholder="Phone Number"
+              />
+              <label for="gender" class="gender-ip"
+                >Gender:
+                <div class="">
+                  <input type="radio" name="1" />Male
+                  <input type="radio" name="1" />Female
+                </div>
+              </label>
+              <label for="birthDay" class="birthDay"
+                >Day Of Birth:
+                <input type="date" name="birthDay" placeholder="Day Of Birth"
+              /></label>
             </div>
-            <div class="authen-item form-col">
-            Authentication
-            <input type="text" class="username-ip" />
-            <input type="text" class="password-ip" />
-            <input type="text" class="comnfirmPass-ip" />
-            <div class="button">
+          </div>
+          <div class="wall"></div>
+          <div class="authen-item form-col">
+            <h2 class="" style="text-align: center; color: #0573b1">
+              Authentication
+            </h2>
+            <div class="authen-ip">
+              <input
+                type="text"
+                class="username-ip"
+                name="username"
+                placeholder="Username"
+              />
+              <input
+                type="password"
+                class="password-ip"
+                name="password"
+                placeholder="Password"
+              />
+              <input
+                type="password"
+                class="comnfirmPass-ip"
+                name="username"
+                placeholder="Confirm Password"
+              />
+              <div class="button">
                 <button>Reset</button>
                 <button>Submit</button>
+              </div>
             </div>
+          </div>
+        </div>
+      </form>
+      <!-- For Mobi -->
+      <form class="container-all-2">
+        <div class="container-mobi">
+          <h1
+            class="resgister"
+            style="text-align: center; margin-bottom: 40px; color: #0573b1"
+          >
+            Resgister New User
+          </h1>
+          <div class="container-form-2">
+            <div class="user-item form-col">
+              <h2 style="text-align: center; color: #0573b1">
+                User-information
+              </h2>
+              <div class="user-ip">
+                <input
+                  type="text"
+                  class="fullName-ip"
+                  name="fullName"
+                  placeholder="Full Name"
+                />
+                <input
+                  type="text"
+                  class="email-ip"
+                  name="email"
+                  placeholder="Email"
+                />
+                <input
+                  type="text"
+                  class="phoneNumber-ip"
+                  name="phoneNumber"
+                  placeholder="Phone Number"
+                />
+                <label for="gender" class="gender-ip"
+                  >Gender:
+                  <div class="">
+                    <input type="radio" name="1" />Male
+                    <input type="radio" name="1" />Female
+                  </div>
+                </label>
+                <label for="birthDay" class="birthDay"
+                  >Day Of Birth:
+                  <input type="date" name="birthDay" placeholder="Day Of Birth"
+                /></label>
+              </div>
             </div>
+            <div class="wall"></div>
+            <div class="authen-item form-col">
+              <h2 class="" style="text-align: center; color: #0573b1">
+                Authentication
+              </h2>
+              <div class="authen-ip">
+                <input
+                  type="text"
+                  class="username-ip"
+                  name="username"
+                  placeholder="Username"
+                />
+                <input
+                  type="password"
+                  class="password-ip"
+                  name="password"
+                  placeholder="Password"
+                />
+                <input
+                  type="password"
+                  class="comnfirmPass-ip"
+                  name="username"
+                  placeholder="Confirm Password"
+                />
+                <div class="button">
+                  <button>Reset</button>
+                  <button>Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </form>
     </main>
-    <footer>Created by DucPhan</footer>
+    <footer style="text-align: center">Created by DucPhan</footer>
   </body>
 </html>
