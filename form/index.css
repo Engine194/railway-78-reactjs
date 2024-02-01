@@ -17,18 +17,27 @@
     border: solid 1px gray;
 }
 .form-1-child{
-    flex-direction: column;
+    padding: 0 0 0 5px;
+    row-gap: 15px;
+}
+.line{
+    margin-top: 40px;
+    width: 0.5%;
+    height:167px ;
+    justify-content: center;
+    background-color: rebeccapurple;
 }
 .form-2{
     margin: 40px 30px;
     border: solid 1px gray;
-    flex-direction: column;
+    padding: 0 0 0 5px;
 
 }
 
 .input{
-    width: 90%;
-    margin: 7.5px 15px;
+    
+    width: 95%;
+    margin: 7.5px 0px;
 }
 .gender{
     margin: 0px 5% 0px 23%;
@@ -36,4 +45,45 @@
 .button{
     display: flex;
     justify-content: space-evenly;
+}
+
+
+.form-all-register{
+    
+    margin-top: 50px;
+    width: 290px;
+    height: auto;
+    border: solid 2px gray;
+    padding: 10px 0px;
+}
+.container-register{
+margin: auto;
+border: solid 1px gray;
+display: flex;
+flex-direction: column;
+row-gap: 10px;
+max-width: 270px;
+height: auto;
+padding: 15px 0px;
+
+
+
+}
+.text-register{
+    
+    text-align: center;
+}
+.form-1-register{
+    margin: auto;
+    border: solid 1px gray;
+    width: 240px;
+    height: 300px;
+    
+
+}
+.form-2-register{
+    margin: auto;
+    border: solid 1px gray;
+    width: 240px;
+    height: 300px;
 }
