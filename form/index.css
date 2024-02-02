@@ -1,10 +1,21 @@
 * {
   box-sizing: border-box;
 }
+
+header > h1 {
+  background-color: whitesmoke;
+  padding-top: 10px;
+  height: 10vh;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  color: green;
+}
 .container-all {
   margin-left: auto;
   margin-right: auto;
-  border: 3px solid aquamarine;
+  border: 5px solid;
+  border-color: #bbbbaa #111111 #0088dd #ee3e80;
   min-height: auto;
   max-width: 680px;
   background: #9152f8;
@@ -48,7 +59,8 @@ h2 {
 
 .form-col {
   flex-grow: 1;
-  border: 5px solid wheat;
+  border: 5px solid;
+  border-color: #bbbbaa #111111 #ee3e80 #0088dd;
   min-height: 400px;
   max-width: 300px;
   padding-top: 20px;
