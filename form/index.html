@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Resgister-Form</title>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
@@ -16,11 +16,11 @@
         <h1 class="register">Resgister New User</h1>
         <div class="container-form">
           <div class="user-inf form-col">
-            <h2 class="h2-text">User information</h2>
-            <input type="text" placeholder="Fullname..." />
+            <h2>User information</h2>
+            <input class="input-1" type="text" placeholder="Fullname..." />
             <input type="email" placeholder="Email..." />
             <input type="text" maxlength="12" placeholder="Phone number..." />
-            <div>
+            <div class="gender">
               Gender
               <input type="radio" id="gender1" name="gender" value="male" />
               <label for="gender1">Male</label>
@@ -34,7 +34,7 @@
           <div class="line"></div>
 
           <div class="authentication form-col">
-            <h2 class="h2-text">Authentication</h2>
+            <h2>Authentication</h2>
             <input type="text" placeholder="Username..." />
             <input type="password" placeholder="Password..." />
             <input type="password" placeholder="Confirm password..." />
@@ -43,13 +43,17 @@
               <button class="button">Reset</button>
               <button class="button">Submit</button>
             </div>
+            <div class="button-remember">
+              <input type="checkbox" id="remember" value="remember" />
+              <label class="remember" for="remember">Remember me !</label>
+            </div>
           </div>
         </div>
       </div>
     </main>
 
     <footer>
-      <h2>Created by Trinh Lee</h2>
+      <h3>Created by Trinh Lee</h>
     </footer>
   </body>
 </html>

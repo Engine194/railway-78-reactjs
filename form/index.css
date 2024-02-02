@@ -9,10 +9,10 @@
   max-width: 680px;
   background: #9152f8;
   border-radius: 8px;
-background: -webkit-linear-gradient(top,#7579ff,#b224ef);
-background: -o-linear-gradient(top,#7579ff,#b224ef);
-background: -moz-linear-gradient(top,#7579ff,#b224ef);
-background: linear-gradient(top,#7579ff,#b224ef);
+  background: -webkit-linear-gradient(top, #7579ff, #b224ef);
+  background: -o-linear-gradient(top, #7579ff, #b224ef);
+  background: -moz-linear-gradient(top, #7579ff, #b224ef);
+  background: linear-gradient(top, #7579ff, #b224ef);
 }
 .register {
   align-items: center;
@@ -20,15 +20,20 @@ background: linear-gradient(top,#7579ff,#b224ef);
   color: coral;
 }
 
-.h2-text{
-    color: darkorange;
+h2 {
+  color: darkorange;
 }
 
-.input-date{
-border-radius: 5px;
-width: 100px;
-height: 28px;
+.input-date {
+  border-radius: 5px;
+  width: 100px;
+  height: 28px;
+  font-weight: bolder;
+}
 
+.gender {
+  font-weight: bold;
+  display: flex;
 }
 .container-form {
   column-gap: 30px;
@@ -47,7 +52,6 @@ height: 28px;
   min-height: 400px;
   max-width: 300px;
   padding-top: 20px;
-
 }
 
 .user-inf,
@@ -65,26 +69,51 @@ height: 28px;
   display: flex;
   justify-content: space-between;
 }
+.form-col > input {
+  border-radius: 5px;
+  height: 30px;
+  font-weight: bolder;
+  border-style: double;
+}
+
+.form-col > input:focus {
+  background-color: whitesmoke;
+}
 
 .button {
   border-radius: 5px;
   height: 30px;
   width: 60px;
+  font-weight: bolder;
 }
 .button:hover {
   cursor: pointer;
-  background-color: coral;
+  background-color: navajowhite;
 }
 
 .line {
   width: 5px; /* Độ rộng của đường thẳng */
   height: auto; /* Chiều cao của đường thẳng */
-  background-color: coral; /* Màu sắc của đường thẳng */
+  background-color: navajowhite; /* Màu sắc của đường thẳng */
+}
+
+#remember {
+  width: 20px;
+  height: 20px;
+}
+.remember {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+}
+
+.button-remember {
+  padding-top: 20px;
 }
 
 footer {
-    margin-top: 5px;
-background-color: whitesmoke;
+  margin-top: 5px;
+  background-color: whitesmoke;
   padding-top: 10px;
   height: 10vh;
   width: 100%;
