@@ -17,7 +17,7 @@ header > h1 {
   border: 5px solid;
   border-color: #bbbbaa #111111 #0088dd #ee3e80;
   min-height: auto;
-  max-width: 680px;
+  max-width: 740px;
   background: #9152f8;
   border-radius: 8px;
   background: -webkit-linear-gradient(top, #7579ff, #b224ef);
@@ -42,10 +42,23 @@ h2 {
   font-weight: bolder;
 }
 
-.gender {
+.gender-wrapper {
   font-weight: bold;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.gender-values {
+  display: flex;
+  column-gap: 3px;
+}
+
+.gender-values label {
+  display: flex;
+  align-items: center;
+}
+
 .container-form {
   column-gap: 30px;
   display: flex;
@@ -55,6 +68,12 @@ h2 {
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 40px;
+}
+
+.inner-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
 }
 
 .form-col {
@@ -81,14 +100,14 @@ h2 {
   display: flex;
   justify-content: space-between;
 }
-.form-col > input {
+.form-col input {
   border-radius: 5px;
   height: 30px;
   font-weight: bolder;
   border-style: double;
 }
 
-.form-col > input:focus {
+.form-col input:focus {
   background-color: whitesmoke;
 }
 

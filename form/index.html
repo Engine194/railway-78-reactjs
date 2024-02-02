@@ -14,21 +14,28 @@
     <main>
       <div class="container-all">
         <h1 class="register">Resgister New User</h1>
-        <div class="container-form">
+        <form class="container-form">
           <div class="user-inf form-col">
             <h2>User information</h2>
-            <input class="input-1" type="text" placeholder="Fullname..." />
-            <input type="email" placeholder="Email..." />
-            <input type="text" maxlength="12" placeholder="Phone number..." />
-            <div class="gender">
-              Gender
-              <input type="radio" id="gender1" name="gender" value="male" />
-              <label for="gender1">Male</label>
-
-              <input type="radio" id="gender2" name="gender" value="female" />
-              <label for="gender2">Female</label>
+            <div class="inner-form">
+                <input class="input-1" type="text" placeholder="Fullname..." />
+                <input type="email" placeholder="Email..." />
+                <input type="text" maxlength="12" placeholder="Phone number..." />
+                <div class="gender-wrapper">
+                  <span>Gender</span>
+                  <div class="gender-values">
+                        <label>
+                            <input type="radio" id="gender1" name="gender" value="male" />
+                            Male
+                        </label>
+                        <label>
+                            <input type="radio" id="gender2" name="gender" value="female" />
+                            Female
+                        </label>
+                  </div>
+                </div>
+                <input type="date" class="input-date" />
             </div>
-            <input type="date" class="input-date" />
           </div>
 
           <div class="line"></div>
@@ -40,15 +47,15 @@
             <input type="password" placeholder="Confirm password..." />
 
             <div class="button-all">
-              <button class="button">Reset</button>
-              <button class="button">Submit</button>
+              <button type="reset" class="button">Reset</button>
+              <button type="submit" class="button">Submit</button>
             </div>
             <div class="button-remember">
               <input type="checkbox" id="remember" value="remember" />
               <label class="remember" for="remember">Remember me !</label>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </main>
 
