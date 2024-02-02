@@ -6,36 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="animate.css"/>
 </head>
 <body>
     <header>
         <h1>Learn about form</h1>
     </header>
     <main>
-        <div class="container-all">
-            <div class="user-register">
-                <div class="user-information">
-                    <input class="text-input" type="text" placeholder="Fullname" />
-                    <input class="text-input" type="text" placeholder="Email" />
-                    <input class="text-input" type="text" placeholder="Phone number" />
-                    <input class="text-input" type="text" placeholder="Phone number" />
-                    <input type="radio" name="gender"/>
-                    <label for="">Male</label>
-                    <input type="radio" name="gender"/>
-                    <label for="">Female</label>
-
-                    <input class="date" placeholder="Date of birth"/>
-                          <div class="date-picker">
-                                 <input type="date" id="date" name="date" required/>
-                                 
-                          </div>
-
-                          <div class="form-group">
-                            <button type="submit">Đăng ký</button>
-                        </div>
-                    
+        <div class="class1">
+            <h1 class="Register">Register new user</h1>
+            <form class="class2">
+                
+                <div class="user-inf form-col">
+                    <h5 style="margin: auto; text-align: center;">User information</h5>
+                    <input class="text-input" type="text" placeholder="Fullname..."/>
+                    <input class="text-input" type="email" placeholder="Email..."/>
+                    <input class="text-input" type="phone" placeholder="Phone number..."/>
+                    <div class="gender">
+                        
+                        <label>Male
+                            <input type="radio" name="gender"/>
+                        </label>
+                        <label >Female
+                            <input type="radio" name="gender"/>
+                        </label>
+                  
+                    </div>
+                    <input class="text-input" type="date" />
                 </div>
-            </div>
+
+                <div class="user-authen form-col">
+                    <h5 style="margin: auto; text-align: center;">Authentication</h5>
+                    <input class="text-input" type="username" placeholder="Username..."/>
+                    <input class="text-input" type="password" placeholder="Password..."/>
+                    <input class="text-input" type="confirm-password" placeholder="Confirm password..."/>
+                    <div class="button">
+                        <button>Reset</button>
+                        <button>Submit</button>
+                    </div>
+                </div>
+            </form>
+            
         </div>
     </main>
     <footer>
