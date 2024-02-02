@@ -13,44 +13,43 @@
 
     <main>
       <div class="container-all">
-        <h1 class="register">Resgister new user</h1>
+        <h1 class="register">Resgister New User</h1>
         <div class="container-form">
           <div class="user-inf form-col">
-            <h2>User information</h2>
-             <div>
-                 <input type="text" placeholder="Fullname..." />
-                 <input type="text" placeholder="Emaill..." />
-                  <input type="text" placeholder="Phone number..." />
-                 <p>
-                     Gender
-                     <input type="radio" id="gender1" name="gender" value="male" />
-                     <label for="gender1">Male</label>
+            <h2 class="h2-text">User information</h2>
+            <input type="text" placeholder="Fullname..." />
+            <input type="email" placeholder="Email..." />
+            <input type="text" maxlength="12" placeholder="Phone number..." />
+            <div>
+              Gender
+              <input type="radio" id="gender1" name="gender" value="male" />
+              <label for="gender1">Male</label>
 
-                    <input type="radio" id="gender2" name="gender" value="female" />
-                     <label for="gender2">Female</label>
-                  </p>
-                 <input type="date" />
-             </div>
+              <input type="radio" id="gender2" name="gender" value="female" />
+              <label for="gender2">Female</label>
+            </div>
+            <input type="date" class="input-date" />
           </div>
 
-          <div>duong ke o giua</div>
-
+          <div class="line"></div>
 
           <div class="authentication form-col">
-            <h2>Authentication</h2>
+            <h2 class="h2-text">Authentication</h2>
             <input type="text" placeholder="Username..." />
             <input type="password" placeholder="Password..." />
             <input type="password" placeholder="Confirm password..." />
 
-            <div class="button">
-              <button>Reset</button>
-              <button>Submit</button>
+            <div class="button-all">
+              <button class="button">Reset</button>
+              <button class="button">Submit</button>
             </div>
           </div>
         </div>
       </div>
     </main>
 
-    <footer>Created by Trinh Lee</footer>
+    <footer>
+      <h2>Created by Trinh Lee</h2>
+    </footer>
   </body>
 </html>
