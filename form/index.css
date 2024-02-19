@@ -18,7 +18,8 @@ header > h1 {
   border-color: #bbbbaa #111111 #0088dd #ee3e80;
   min-height: auto;
   max-width: 740px;
-  background: #9152f8;
+  /* background: #9152f8; */
+  /* background: whitesmoke; */
   border-radius: 8px;
   background: -webkit-linear-gradient(top, #7579ff, #b224ef);
   background: -o-linear-gradient(top, #7579ff, #b224ef);
@@ -37,7 +38,7 @@ h2 {
 
 .input-date {
   border-radius: 5px;
-  width: 100px;
+  /* width: 100px; */
   height: 28px;
   font-weight: bolder;
 }
@@ -103,7 +104,7 @@ h2 {
 .form-col input {
   border-radius: 5px;
   height: 30px;
-  font-weight: bolder;
+  /* font-weight: bolder; */
   border-style: double;
 }
 
@@ -126,6 +127,7 @@ h2 {
   width: 5px; /* Độ rộng của đường thẳng */
   height: auto; /* Chiều cao của đường thẳng */
   background-color: navajowhite; /* Màu sắc của đường thẳng */
+  border-radius: 10px;
 }
 
 #remember {

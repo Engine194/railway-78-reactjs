@@ -1,0 +1,96 @@
+.trinh-form-container{
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.trinh-form-container>h1{
+    text-align: center;
+}
+
+.form-row{
+    max-width: 740px;
+    margin: 0 auto;
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+}
+
+.diviver{
+    width: 2px; /* Độ rộng của đường thẳng */
+    height: auto; /* Chiều cao của đường thẳng */
+    background-color: black; /* Màu sắc của đường thẳng */
+}
+
+
+.form-col{
+    flex: 1;
+
+}
+
+.form-col>h2{
+    margin-bottom: 15px;
+}
+
+.form-col-left{
+
+}
+
+.sub-form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.form-control>input{
+    width: 100%;
+    outline: none;
+    font-size: large;
+    border: none;
+    background-color: whitesmoke;
+    padding: 10px 12px;
+}
+
+.form-control>p{
+    margin-top: 3px;
+    margin-bottom: 0;
+    color: red;
+}
+
+.gender-container{
+    display: flex;
+    column-gap: 12px;
+    justify-content: space-between;
+    font-size: large;
+}
+
+.form-col-right{
+
+}
+
+.form-actions{
+    margin-top: 30px;
+    display: flex;
+    column-gap: 30px;
+    justify-content: space-between;
+
+}
+.form-actions>button{
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-size: large;
+    border-radius: 5px;
+    transition: opacity 200ms linear;
+}
+
+.form-actions>button:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.form-actions>button[type="submit"]{
+    color: white;
+    background-color: #1677ff;
+
+}
