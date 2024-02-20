@@ -94,8 +94,12 @@ function App() {
       {/* <UserList/> */}
       {/* <UserForm/> */}
       <TrinhForm/>
+      <div className="footer">©CoptRight By Trình Lee</div>
     </div>
+
+  
   );
+
 }
 
 export default App;

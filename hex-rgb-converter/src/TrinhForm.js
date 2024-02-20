@@ -1,12 +1,17 @@
 import './TrinhForm.style.css'
 import {useState} from 'react'
 
+
+
 const TrinhForm = () => {
     const[fullname, setFullName] = useState('')
     const handleChangeFullName = (event) =>{
         const inputEle = event.target;
         setFullName(inputEle.value);
     };
+
+    console.log('fullname....', fullname);
+
     
     const[email, setEmail] = useState('')
     const handleChangeEmail = (event) =>{
@@ -14,11 +19,17 @@ const TrinhForm = () => {
         setEmail(inputEle.value);
     };
 
+    // console.log('email....', email);
+
+
     const[phone, setPhone] = useState('')
     const handleChangePhone = (event) =>{
         const inputEle = event.target;
         setPhone(inputEle.value);
     };
+
+    // console.log('Phone number....',phone);
+
 
     const[date, setDate] = useState('')
     const handleChangeDate = (event) =>{
@@ -26,11 +37,17 @@ const TrinhForm = () => {
         setDate(inputEle.value);
     };
 
+    // console.log('Date....', date);
+
+
     const[username, setUserName] = useState('')
     const handleChangeUserName = (event) =>{
         const inputEle = event.target;
         setUserName(inputEle.value);
     };
+
+    // console.log('user name....', username);
+
 
     const[password, setPassword] = useState('')
     const handleChangePassword = (event) =>{
@@ -38,15 +55,18 @@ const TrinhForm = () => {
         setPassword(inputEle.value);
     };
 
+    // console.log('password....', password);
+
+
     const[confirmPassword, setConfirmPassword] = useState('')
     const handleChangeConfirmPassword = (event) =>{
         const inputEle = event.target;
         setConfirmPassword(inputEle.value);
     };
 
-    console.log('fullname....', fullname);
+    // console.log('Confirm password....', confirmPassword);
 
-    console.log('email....', email);
+
 
 
     return (
@@ -63,7 +83,7 @@ const TrinhForm = () => {
                             placeholder='Full Name'
                             value={fullname}
                             onChange={handleChangeFullName}/>
-                            <p>Error fullname</p>
+                            {/* <p>Error fullname</p> */}
                         </div>
             
                         <div className="form-control">

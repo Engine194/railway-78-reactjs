@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 .greeting-heading {
@@ -130,6 +130,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: large;
+  padding-top: 25px;
+  height: 10vh;
+  background-color: aquamarine;
+  margin-top: 10px;
 }
 /* 
 .user-form-inner-wrapper {

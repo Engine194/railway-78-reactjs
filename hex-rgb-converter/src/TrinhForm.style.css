@@ -2,10 +2,17 @@
 width: 100%;
 max-width: 1200px;
 margin: 0 auto;
+background-color: khaki;
+border-radius: 5px;
+background-image: url("https://phongvu.vn/cong-nghe/wp-content/uploads/2020/11/119234579_169457918065236_755533166268046471_n-1.jpg");
+padding-bottom: 60px;
+background-size: 1200px auto;
 }
 
 .trinh-form-container>h1{
     text-align: center;
+    text-shadow: 0.5em 0.4em 0.4em;
+    color: hotpink;
 }
 
 .form-row{
@@ -19,7 +26,7 @@ margin: 0 auto;
 .diviver{
     width: 2px; /* Độ rộng của đường thẳng */
     height: auto; /* Chiều cao của đường thẳng */
-    background-color: black; /* Màu sắc của đường thẳng */
+    background-color: darkturquoise; /* Màu sắc của đường thẳng */
 }
 
 
@@ -30,6 +37,8 @@ margin: 0 auto;
 
 .form-col>h2{
     margin-bottom: 15px;
+    font-style: italic;
+    color: darkcyan;
 }
 
 .form-col-left{
@@ -49,6 +58,10 @@ margin: 0 auto;
     border: none;
     background-color: whitesmoke;
     padding: 10px 12px;
+    border-radius: 5px;
+    font-style: italic;
+    box-shadow: 0.3em 0.4em 0.4em;
+    
 }
 
 .form-control>p{
@@ -61,7 +74,8 @@ margin: 0 auto;
     display: flex;
     column-gap: 12px;
     justify-content: space-between;
-    font-size: large;
+    font-size: x-large;
+    color: cyan;
 }
 
 .form-col-right{
@@ -69,7 +83,7 @@ margin: 0 auto;
 }
 
 .form-actions{
-    margin-top: 30px;
+    margin-top: 62px;
     display: flex;
     column-gap: 30px;
     justify-content: space-between;
@@ -82,10 +96,12 @@ margin: 0 auto;
     font-size: large;
     border-radius: 5px;
     transition: opacity 200ms linear;
+    max-width: 87.03px;
+    max-height: 40.8px;
 }
 
 .form-actions>button:hover{
-    opacity: 0.6;
+    opacity: 0.7;
     cursor: pointer;
 }
 
