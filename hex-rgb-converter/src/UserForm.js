@@ -22,7 +22,6 @@ export default function UserForm() {
             <div className="gender-group">
               <label>
                 <input
-
                   type="radio"
                   name="gender"
                   onChange={handleChangeGender}

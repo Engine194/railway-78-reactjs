@@ -7,6 +7,7 @@ import ActionButton from "./ActionButton";
 import { COLOR_TYPE, generateColorInputProps } from "./utils";
 import UserList from "./UserList";
 import UserForm from "./UserForm";
+import ThanhForm from "./ThanhForm";
 
 function App() {
   const [hex, setHex] = useState("");
@@ -91,7 +92,11 @@ function App() {
         <ColorInput {...rgbInputProps} />
       </div>
       {/* <UserList/> */}
-      <UserForm/>
+      {/* <UserForm/> */}
+
+      <ThanhForm/>
+
+
     </div>
   );
 }
