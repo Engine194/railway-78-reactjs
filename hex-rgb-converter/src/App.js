@@ -7,7 +7,7 @@ import ActionButton from "./ActionButton";
 import { COLOR_TYPE, generateColorInputProps } from "./utils";
 import UserList from "./UserList";
 import UserForm from "./UserForm";
-import TrinhForm from "./TrinhForm"
+import Form from "./Form"
 
 function App() {
   const [hex, setHex] = useState("");
@@ -93,8 +93,8 @@ function App() {
       </div>
       {/* <UserList/> */}
       {/* <UserForm/> */}
-      <TrinhForm/>
-      <div className="footer">©CoptRight By Trình Lee</div>
+      <Form/>
+      {/* <div className="footer">©CopyRight By Khanh</div> */}
     </div>
 
   

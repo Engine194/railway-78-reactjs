@@ -1,9 +1,9 @@
-import './TrinhForm.style.css'
+import './Form.style.css'
 import {useState} from 'react'
 
 
 
-const TrinhForm = () => {
+const Form = () => {
     const[fullname, setFullName] = useState('')
     const handleChangeFullName = (event) =>{
         const inputEle = event.target;
@@ -19,7 +19,7 @@ const TrinhForm = () => {
         setEmail(inputEle.value);
     };
 
-    // console.log('email....', email);
+    console.log('email....', email);
 
 
     const[phone, setPhone] = useState('')
@@ -28,7 +28,7 @@ const TrinhForm = () => {
         setPhone(inputEle.value);
     };
 
-    // console.log('Phone number....',phone);
+    console.log('Phone number....',phone);
 
 
     const[date, setDate] = useState('')
@@ -37,7 +37,7 @@ const TrinhForm = () => {
         setDate(inputEle.value);
     };
 
-    // console.log('Date....', date);
+    console.log('Date....', date);
 
 
     const[username, setUserName] = useState('')
@@ -46,7 +46,7 @@ const TrinhForm = () => {
         setUserName(inputEle.value);
     };
 
-    // console.log('user name....', username);
+    console.log('user name....', username);
 
 
     const[password, setPassword] = useState('')
@@ -55,7 +55,7 @@ const TrinhForm = () => {
         setPassword(inputEle.value);
     };
 
-    // console.log('password....', password);
+    console.log('password....', password);
 
 
     const[confirmPassword, setConfirmPassword] = useState('')
@@ -64,7 +64,7 @@ const TrinhForm = () => {
         setConfirmPassword(inputEle.value);
     };
 
-    // console.log('Confirm password....', confirmPassword);
+    console.log('Confirm password....', confirmPassword);
 
 
 
@@ -173,4 +173,4 @@ const TrinhForm = () => {
 
 };
 
-export default TrinhForm;
+export default Form;

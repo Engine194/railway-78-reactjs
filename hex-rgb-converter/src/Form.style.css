@@ -2,17 +2,17 @@
 width: 100%;
 max-width: 1200px;
 margin: 0 auto;
-background-color: khaki;
+/* background-color: khaki; */
 border-radius: 5px;
-background-image: url("https://phongvu.vn/cong-nghe/wp-content/uploads/2020/11/119234579_169457918065236_755533166268046471_n-1.jpg");
+/* background-image: url("https://phongvu.vn/cong-nghe/wp-content/uploads/2020/11/119234579_169457918065236_755533166268046471_n-1.jpg"); */
 padding-bottom: 60px;
 background-size: 1200px auto;
 }
 
 .trinh-form-container>h1{
     text-align: center;
-    text-shadow: 0.5em 0.4em 0.4em;
-    color: hotpink;
+    /* text-shadow: 0.5em 0.4em 0.4em; */
+    /* color: hotpink; */
 }
 
 .form-row{
@@ -38,7 +38,7 @@ background-size: 1200px auto;
 .form-col>h2{
     margin-bottom: 15px;
     font-style: italic;
-    color: darkcyan;
+    /* color: darkcyan; */
 }
 
 .form-col-left{
@@ -60,7 +60,7 @@ background-size: 1200px auto;
     padding: 10px 12px;
     border-radius: 5px;
     font-style: italic;
-    box-shadow: 0.3em 0.4em 0.4em;
+    /* box-shadow: 0.3em 0.4em 0.4em; */
     
 }
 
@@ -74,8 +74,8 @@ background-size: 1200px auto;
     display: flex;
     column-gap: 12px;
     justify-content: space-between;
-    font-size: x-large;
-    color: cyan;
+    font-size: large;
+    /* color: cyan; */
 }
 
 .form-col-right{
@@ -98,6 +98,8 @@ background-size: 1200px auto;
     transition: opacity 200ms linear;
     max-width: 87.03px;
     max-height: 40.8px;
+    /* color: white;
+    background-color: #1677ff; */
 }
 
 .form-actions>button:hover{
@@ -108,5 +110,5 @@ background-size: 1200px auto;
 .form-actions>button[type="submit"]{
     color: white;
     background-color: #1677ff;
-
+    padding-left: 15px;
 }
