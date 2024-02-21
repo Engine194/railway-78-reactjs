@@ -1,0 +1,26 @@
+.text{
+   text-align: center;
+   color: brown;
+   margin-top: 2px;
+
+}
+
+.a{
+    margin: 40px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    column-gap: 30px;
+}
+
+.child-1{
+    padding-top: 20px;
+    padding-left: 15px;
+
+}
+
+.child-2{
+    margin-top: 15px;
+    
+}
+
