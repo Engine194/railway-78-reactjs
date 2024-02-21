@@ -1,14 +1,17 @@
 import "./TrinhForm.style.css";
 import { useState } from "react";
+import { GENDER_TYPE } from "./utils";
 
 const TrinhForm = () => {
   const [fullname, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [gender, setGender] = useState(GENDER_TYPE.FEMALE);
   const [date, setDate] = useState("");
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  
 
   const handleChangeFactory = (setState) => {
     const handleChange = (event) => {
@@ -17,6 +20,7 @@ const TrinhForm = () => {
     };
     return handleChange;
   };
+
   return (
     <div className="trinh-form-container">
       <h1>Register Form</h1>
@@ -59,11 +63,21 @@ const TrinhForm = () => {
               <span>Gender:</span>
               <div className="gender-radios">
                 <label>
-                  <input type="radio" name="gender" />
+                  <input type="radio"
+                  name="gender"
+                  onChange={handleChangeFactory(setGender)}
+                  value={GENDER_TYPE.MALE}
+                  checked={gender === GENDER_TYPE.MALE}
+                  />
                   Male
                 </label>
                 <label>
-                  <input type="radio" name="gender" />
+                  <input type="radio"
+                  name="gender"
+                  onChange={handleChangeFactory(setGender)}
+                  value={GENDER_TYPE.FEMALE}
+                  checked={gender === GENDER_TYPE.FEMALE}
+                   />
                   FeMale
                 </label>
               </div>
