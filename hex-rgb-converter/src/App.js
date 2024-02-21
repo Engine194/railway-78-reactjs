@@ -5,6 +5,7 @@ import ArrowRight from "./ArrowRight";
 import ColorInput from "./ColorInput";
 import ActionButton from "./ActionButton";
 import { COLOR_TYPE, generateColorInputProps } from "./utils";
+import ChienForm from "./ChienForm";
 
 function App() {
   const [hex, setHex] = useState("");
@@ -187,8 +188,8 @@ function App() {
           Reset
         </button>
       </form>
+      <ChienForm/>
     </div>
   );
 }
-
 export default App;
