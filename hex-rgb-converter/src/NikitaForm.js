@@ -2,27 +2,90 @@ import { useState } from "react";
 import "./NikitaForm.style.css";
 import { GENDER_TYPE } from "./utils";
 
+const initialInputValue = { value: "", error: "" };
+
 const NikitaForm = () => {
-  const [gender, setGender] = useState(GENDER_TYPE.FEMALE);
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [dateOfBirth, setDateOfBirth] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [fullName, setFullName] = useState(initialInputValue);
+  const [gender, setGender] = useState({
+    value: GENDER_TYPE.FEMALE,
+    error: "",
+  });
+  const [email, setEmail] = useState(initialInputValue);
+  const [username, setUsername] = useState(initialInputValue);
+  const [password, setPassword] = useState(initialInputValue);
+  const [confirmPassword, setConfirmPassword] = useState(initialInputValue);
+  const [dateOfBirth, setDateOfBirth] = useState(initialInputValue);
+  const [phoneNumber, setPhoneNumber] = useState(initialInputValue);
 
   const onChangeHandlerFactory = (setState) => {
     return (event) => {
       const inputEle = event.target;
-      setState(inputEle.value);
+      setState((previousState) => {
+        return { ...previousState, value: inputEle.value };
+      });
     };
   };
+
+  const resetFullname = () => {
+    setFullName(initialInputValue);
+  }
+
+  const onValidateFactory = (setState) => {
+    return (errorMsg) => {
+      setState((previousState) => {
+        return { ...previousState, error: errorMsg };
+      });
+    };
+  };
+
+  const clearErrors = () => {
+    [
+      setFullName,
+      setGender,
+      setEmail,
+      setUsername,
+      setPassword,
+      setConfirmPassword,
+      setDateOfBirth,
+      setPhoneNumber,
+    ].forEach((setState) => {
+      setState((previousState) => {
+        return { ...previousState, error: "" };
+      });
+    });
+  };
+
   const handleChangeGender = onChangeHandlerFactory(setGender);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // validate
+    clearErrors();
+    // validate Fullname
+    if (/[^a-zA-Z ]/.test(fullName.value)) {
+      onValidateFactory(setFullName)("Fullname is not valid...");
+    }
 
+    if (/[^01]/.test(gender.value)) {
+      onValidateFactory(setGender)("Gender is not valid...");
+    }
+
+    if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value)) {
+      onValidateFactory(setEmail)("Email is not valid...");
+    }
+
+    const values = {
+      fullName: fullName.value, // alphabet
+      gender: gender.value, // '0' | '1'
+      email: email.value, // must be an email
+      username: username.value, // alphabet | number && min(5) max(50)
+      password: password.value, // min(8) & alphabet(1) & ALPHABET(1) & number(1)
+      confirmPassword: confirmPassword.value, // must equal password
+      dateOfBirth: dateOfBirth.value, // must greater than 10 years old
+      phoneNumber: phoneNumber.value, // min(9) & max(12)
+    };
+    // Call api create user
+    console.log("values...", values); // AXIOS == fetch
   };
 
   return (
@@ -37,30 +100,32 @@ const NikitaForm = () => {
                 type="text"
                 name="fullname"
                 placeholder="Fullname"
-                value={fullName}
+                value={fullName.value}
                 onChange={onChangeHandlerFactory(setFullName)}
               />
-              <p>Error fullname</p>
+              {fullName.error ? <p>{fullName.error}</p> : null}
             </div>
 
             <div className="form-control">
               <input
                 type="text"
-                value={email}
+                value={email.value}
                 onChange={onChangeHandlerFactory(setEmail)}
                 name="email"
                 placeholder="Email"
               />
+              {email.error ? <p>{email.error}</p> : null}
             </div>
 
             <div className="form-control">
               <input
                 type="text"
-                value={phoneNumber}
+                value={phoneNumber.value}
                 onChange={onChangeHandlerFactory(setPhoneNumber)}
                 name="phone"
                 placeholder="Phone number"
               />
+              {phoneNumber.error ? <p>{phoneNumber.error}</p> : null}
             </div>
 
             <div className="gender-container">
@@ -69,7 +134,7 @@ const NikitaForm = () => {
                 <label>
                   <input
                     onChange={handleChangeGender}
-                    checked={gender === GENDER_TYPE.MALE}
+                    checked={gender.value === GENDER_TYPE.MALE}
                     type="radio"
                     name="gender"
                     value={GENDER_TYPE.MALE}
@@ -79,7 +144,7 @@ const NikitaForm = () => {
                 <label>
                   <input
                     onChange={handleChangeGender}
-                    checked={gender === GENDER_TYPE.FEMALE}
+                    checked={gender.value === GENDER_TYPE.FEMALE}
                     type="radio"
                     name="gender"
                     value={GENDER_TYPE.FEMALE}
@@ -92,7 +157,7 @@ const NikitaForm = () => {
             <div className="form-control">
               <input
                 type="date"
-                value={dateOfBirth}
+                value={dateOfBirth.value}
                 onChange={onChangeHandlerFactory(setDateOfBirth)}
                 name="dateOfBirth"
               />
@@ -106,7 +171,7 @@ const NikitaForm = () => {
             <div className="form-control">
               <input
                 type="text"
-                value={username}
+                value={username.value}
                 onChange={onChangeHandlerFactory(setUsername)}
                 name="username"
                 placeholder="Username"
@@ -115,7 +180,7 @@ const NikitaForm = () => {
             <div className="form-control">
               <input
                 type="password"
-                value={password}
+                value={password.value}
                 onChange={onChangeHandlerFactory(setPassword)}
                 name="password"
                 placeholder="Password"
@@ -124,7 +189,7 @@ const NikitaForm = () => {
             <div className="form-control">
               <input
                 type="password"
-                value={confirmPassword}
+                value={confirmPassword.value}
                 onChange={onChangeHandlerFactory(setConfirmPassword)}
                 name="confirmPassword"
                 placeholder="Confirm password"
