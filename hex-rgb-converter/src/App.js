@@ -7,7 +7,7 @@ import ActionButton from "./ActionButton";
 import { COLOR_TYPE, generateColorInputProps } from "./utils";
 import UserList from "./UserList";
 import UserForm from "./UserForm";
-import NikitaForm from "./NikitaForm";
+import SonForm from "./SonForm";
 
 function App() {
   const [hex, setHex] = useState("");
@@ -39,26 +39,8 @@ function App() {
   };
 
   const colorPropsMap = new Map([
-    [
-      COLOR_TYPE.HEX,
-      generateColorInputProps(
-        COLOR_TYPE.HEX,
-        "Hex color",
-        "hex-input",
-        hex,
-        setHex
-      ),
-    ],
-    [
-      COLOR_TYPE.RGB,
-      generateColorInputProps(
-        COLOR_TYPE.RGB,
-        "RGB color",
-        "rgb-input",
-        rgb,
-        setRgb
-      ),
-    ],
+    [COLOR_TYPE.HEX, generateColorInputProps(COLOR_TYPE.HEX, "Hex color", "hex-input", hex, setHex)],
+    [COLOR_TYPE.RGB, generateColorInputProps(COLOR_TYPE.RGB, "RGB color", "rgb-input", rgb, setRgb)],
   ]);
 
   const hexInputProps = colorPropsMap.get(COLOR_TYPE.HEX);
@@ -76,24 +58,14 @@ function App() {
       <div className="color-form">
         <ColorInput {...hexInputProps} />
         <div className="btn-actions">
-          <ActionButton
-            className="tohex-btn"
-            title="Convert to Hex color"
-            onClick={toHex}
-            Icon={ArrowLeft}
-          />
-          <ActionButton
-            className="torgb-btn"
-            title="Convert to RGB color"
-            onClick={toRgb}
-            Icon={ArrowRight}
-          />
+          <ActionButton className="tohex-btn" title="Convert to Hex color" onClick={toHex} Icon={ArrowLeft} />
+          <ActionButton className="torgb-btn" title="Convert to RGB color" onClick={toRgb} Icon={ArrowRight} />
         </div>
         <ColorInput {...rgbInputProps} />
       </div>
       {/* <UserList/> */}
       {/* <UserForm/> */}
-      <NikitaForm/>
+      <SonForm />
     </div>
   );
 }

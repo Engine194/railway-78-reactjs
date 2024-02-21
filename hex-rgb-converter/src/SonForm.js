@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "./NikitaForm.style.css";
+import "./SonForm.style.css";
 import { GENDER_TYPE } from "./utils";
 
-const NikitaForm = () => {
+const SonForm = () => {
   const [gender, setGender] = useState(GENDER_TYPE.FEMALE);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -22,7 +22,6 @@ const NikitaForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
   };
 
   return (
@@ -33,69 +32,34 @@ const NikitaForm = () => {
           <h2>User information</h2>
           <div className="sub-form">
             <div className="form-control">
-              <input
-                type="text"
-                name="fullname"
-                placeholder="Fullname"
-                value={fullName}
-                onChange={onChangeHandlerFactory(setFullName)}
-              />
+              <input type="text" name="fullname" placeholder="Fullname" value={fullName} onChange={onChangeHandlerFactory(setFullName)} />
               <p>Error fullname</p>
             </div>
 
             <div className="form-control">
-              <input
-                type="text"
-                value={email}
-                onChange={onChangeHandlerFactory(setEmail)}
-                name="email"
-                placeholder="Email"
-              />
+              <input type="text" value={email} onChange={onChangeHandlerFactory(setEmail)} name="email" placeholder="Email" />
             </div>
 
             <div className="form-control">
-              <input
-                type="text"
-                value={phoneNumber}
-                onChange={onChangeHandlerFactory(setPhoneNumber)}
-                name="phone"
-                placeholder="Phone number"
-              />
+              <input type="text" value={phoneNumber} onChange={onChangeHandlerFactory(setPhoneNumber)} name="phone" placeholder="Phone number" />
             </div>
 
             <div className="gender-container">
               <span>Gender:</span>
               <div className="gender-radios">
                 <label>
-                  <input
-                    onChange={handleChangeGender}
-                    checked={gender === GENDER_TYPE.MALE}
-                    type="radio"
-                    name="gender"
-                    value={GENDER_TYPE.MALE}
-                  />
+                  <input onChange={handleChangeGender} checked={gender === GENDER_TYPE.MALE} type="radio" name="gender" value={GENDER_TYPE.MALE} />
                   Male
                 </label>
                 <label>
-                  <input
-                    onChange={handleChangeGender}
-                    checked={gender === GENDER_TYPE.FEMALE}
-                    type="radio"
-                    name="gender"
-                    value={GENDER_TYPE.FEMALE}
-                  />
+                  <input onChange={handleChangeGender} checked={gender === GENDER_TYPE.FEMALE} type="radio" name="gender" value={GENDER_TYPE.FEMALE} />
                   Female
                 </label>
               </div>
             </div>
 
             <div className="form-control">
-              <input
-                type="date"
-                value={dateOfBirth}
-                onChange={onChangeHandlerFactory(setDateOfBirth)}
-                name="dateOfBirth"
-              />
+              <input type="date" value={dateOfBirth} onChange={onChangeHandlerFactory(setDateOfBirth)} name="dateOfBirth" />
             </div>
           </div>
         </div>
@@ -104,22 +68,10 @@ const NikitaForm = () => {
           <h2>Authentication</h2>
           <div className="sub-form">
             <div className="form-control">
-              <input
-                type="text"
-                value={username}
-                onChange={onChangeHandlerFactory(setUsername)}
-                name="username"
-                placeholder="Username"
-              />
+              <input type="text" value={username} onChange={onChangeHandlerFactory(setUsername)} name="username" placeholder="Username" />
             </div>
             <div className="form-control">
-              <input
-                type="password"
-                value={password}
-                onChange={onChangeHandlerFactory(setPassword)}
-                name="password"
-                placeholder="Password"
-              />
+              <input type="password" value={password} onChange={onChangeHandlerFactory(setPassword)} name="password" placeholder="Password" />
             </div>
             <div className="form-control">
               <input
@@ -141,4 +93,4 @@ const NikitaForm = () => {
   );
 };
 
-export default NikitaForm;
+export default SonForm;
