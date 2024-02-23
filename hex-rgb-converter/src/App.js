@@ -11,9 +11,10 @@ import ThanhtaiForm from "./ThanhtaiForm";
 
 
 function App() {
+  const [name, setName] = useState('');
   const [hex, setHex] = useState("");
   const [rgb, setRgb] = useState("");
-
+  
   const toHex = () => {
     const numbers = rgb.split(",").map((num) => (+num).toString(16));
     const newVal = numbers.reduce((acc, val) => {
@@ -95,6 +96,8 @@ function App() {
       {/* <UserList/> */}
       {/* <UserForm/> */}
       <ThanhtaiForm/>
+
+      <inputName name={name} changeInputName={receiveInputChanging} />
     </div>
   );
 }
