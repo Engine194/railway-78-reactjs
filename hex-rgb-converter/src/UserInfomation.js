@@ -1,7 +1,8 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import { GENDER_TYPE } from "./utils";
+import { UserFormContext } from "./App";
 
-const UserInfomation = (props) => {
+const UserInfomation = () => {
   const {
     fullName,
     email,
@@ -16,26 +17,8 @@ const UserInfomation = (props) => {
       handleChangeGender,
       setDateOfBirth,
     },
-  } = props || {};
-  /*
-    props = {
-        fullName,
-        email,
-        phoneNumber,
-        gender,
-        dateOfBirth,
-        api
-    }
+  } = useContext(UserFormContext);
 
-    api = {
-        onChangeHandlerFactory,
-        setFullName,
-        setEmail,
-        setPhoneNumber,
-        handleChangeGender,
-        setDateOfBirth, 
-    }
-    */
   return (
     <Fragment>
       <h2>User information</h2>
