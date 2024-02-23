@@ -2,6 +2,8 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    background: rgba(54, 179, 83, 0.6);
+    border-radius: 10px;
 }
 
 .thanh-form-container > h1 {
@@ -27,6 +29,7 @@
 
 .form-col > h2 {
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .form-col-left {
@@ -42,6 +45,7 @@
     flex-direction: column;
     row-gap: 15px;
 }
+
 
 .form-control > input {
     width: 100%;
@@ -91,4 +95,10 @@
 .form-actions > button[type="submit"] {
     background-color: #1677ff;
     color: white;
+}
+
+.error-message {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(233 15 46 / 70%);
 }
