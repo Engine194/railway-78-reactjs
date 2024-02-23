@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import "./App.css";
 import ArrowLeft from "./ArrowLeft";
 import ArrowRight from "./ArrowRight";
@@ -7,6 +7,13 @@ import ActionButton from "./ActionButton";
 import { COLOR_TYPE, generateColorInputProps } from "./utils";
 import UserList from "./UserList";
 import UserForm from "./UserForm";
+import HoangForm from "./HoangForm"
+
+export const UserFormContext = createContext()
+
+const UserFormContextProvider = UserFormContext.Provider
+
+const initialInputValue = {value: " ", error: ""}
 
 function App() {
   const [hex, setHex] = useState("");
@@ -90,8 +97,31 @@ function App() {
         </div>
         <ColorInput {...rgbInputProps} />
       </div>
+
+      <UserFormContextProvider value = {}>
       {/* <UserList/> */}
-      <UserForm/>
+      {/* <UserForm/> */}
+      <HoangForm
+      {...{
+      fullname,
+      email,
+      phone,
+      gender,
+      dateOfBirth,
+      api: {
+        setFullname,
+        setEmail,
+        setUsername,
+        setPassword,
+        setDateOfBirth,
+        onChangeHandlerFactory,
+        handleChangeGender,
+        handleSubmit,
+      }
+    }}
+      />
+      </UserFormContextProvider>
+      
     </div>
   );
 }
