@@ -1,7 +1,7 @@
 import React from "react";
 import { COLOR_TYPE } from "./utils";
 
-export default function ColorInput(props) { // UI component
+ function ColorInput(props) { // UI component
   const { label, color, changeColor, type, inputClassName } = props || {};
 
   const handleChangeColor = (event) => {
@@ -23,3 +23,5 @@ export default function ColorInput(props) { // UI component
     </fieldset>
   );
 }
+
+export default ColorInput;

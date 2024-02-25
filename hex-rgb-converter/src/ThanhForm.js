@@ -2,35 +2,16 @@
 import "./ThanhForm.style.css";
 import UserInfomation from "./UserInfomation";
 import UserAuthentication from "./UserAuthentication";
+import { useContext } from "react";
+import { UserFormContext } from "./App";
 
 // Đặt chung để dùng lại
 const intialInputValue = { value: "", error: "" };
 
 const ThanhForm = (props) => {
-  const { 
-    fullName,
-    email,
-    gender,
-    phonenNumber,
-    dateOfbirth,
-    username,
-    password,
-    confirmPassword,
-    api: {
-      setFullName,
-      setEmail,
-      setPhonenNumber,
-      setDateOfbirth,
-      setUsername,
-      setPassword,
-      setConfirmPassword,
-      onChangHandlerFactory,
-      handleChangeGender,
-      handleSubmit,
-      reSetAll
-    }
-  }  = props || {};
-    
+  const {
+    api: {handleSubmit}
+  } = useContext(UserFormContext);
 
   // const [fullName, setFullName] = useState(intialInputValue);
   // const [email, setEmail] = useState(intialInputValue);
@@ -117,7 +98,7 @@ const ThanhForm = (props) => {
   //       setPassword,
   //       setConfirmPassword
   //   ].forEach((setState) => {
-  //     setState(intialInputValue) 
+  //     setState(intialInputValue)
   //   })
   // }
 
@@ -128,8 +109,6 @@ const ThanhForm = (props) => {
   // // const resFullname = (seState) => {
   // //   setFullName(intialInputValue);
   // // }
-
-  
 
   // const onValidateFactory = (setState) => {
   //   return (errorMessage) => {
@@ -196,7 +175,6 @@ const ThanhForm = (props) => {
   //     onValidateFactory(setConfirmPassword)("Confirm Password does not match Password....");
   //     return
   //   }
-
 
   //   const values = {
   //     fullName: fullName.value, // alphabet
@@ -306,19 +284,21 @@ const ThanhForm = (props) => {
           </div> */}
 
           <UserInfomation
-            fullName={fullName}
-            email={email}
-            phonenNumber={phonenNumber}
-            gender={gender}
-            dateOfbirth={dateOfbirth}
-            api={{
-              onChangHandlerFactory,
-              setFullName,
-              setEmail,
-              setPhonenNumber,
-              handleChangeGender,
-              setDateOfbirth,
-            }}
+          //   {...{
+          //     fullName,
+          //     email,
+          //     phonenNumber,
+          //     gender,
+          //     dateOfbirth,
+          //     api:{
+          //       onChangHandlerFactory,
+          //       setFullName,
+          //       setEmail,
+          //       setPhonenNumber,
+          //       handleChangeGender,
+          //       setDateOfbirth,
+          //   }
+          // }}
           />
         </div>
         <div className="divider"></div>
@@ -357,23 +337,27 @@ const ThanhForm = (props) => {
               />
               {confirmPassword.error ? <p>{confirmPassword.error}</p> : null}
             </div>
-          </div> */}
-          <UserAuthentication
-            username={username}
-            password={password}
-            confirmPassword={confirmPassword}
-            api={{
-              onChangHandlerFactory,
-              setUsername,
-              setPassword,
-              setConfirmPassword
-            }}
-          />
-{/* UserAuthentication */}
+          </div>
+      
           <div className="form-actions">
             <button type="reset" onClick={reSetAll}>Rest</button>
             <button type="submit">Submit</button>
-          </div>
+          </div> */}
+
+          {/* UserAuthentication */}
+
+          <UserAuthentication
+            // username={username}
+            // password={password}
+            // confirmPassword={confirmPassword}
+            // api={{
+            //   onChangHandlerFactory,
+            //   setUsername,
+            //   setPassword,
+            //   setConfirmPassword,
+            //   reSetAll
+            // }}
+          />
         </div>
       </form>
     </div>

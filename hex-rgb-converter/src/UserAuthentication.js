@@ -1,18 +1,33 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
+import { UserFormContext } from "./App";
 
 const UserAuthentication = (props) => {
-
+  
     const {
-        username,
-        password,
-        confirmPassword,
-        api: {
-            onChangHandlerFactory,
-            setUsername,
-            setPassword,
-            setConfirmPassword
-        }
-    } = props || {};
+      username,
+      password,
+      confirmPassword,
+      api: {
+          onChangHandlerFactory,
+          setUsername,
+          setPassword,
+          setConfirmPassword,
+          reSetAll
+      }
+    } = useContext(UserFormContext)
+
+    // const {
+    //     username,
+    //     password,
+    //     confirmPassword,
+    //     api: {
+    //         onChangHandlerFactory,
+    //         setUsername,
+    //         setPassword,
+    //         setConfirmPassword,
+    //         reSetAll
+    //     }
+    // } = props || {};
 
   return (
     <Fragment>
@@ -50,6 +65,10 @@ const UserAuthentication = (props) => {
           />
           {confirmPassword.error ? <p>{confirmPassword.error}</p> : null}
         </div>
+      </div>
+      <div className="form-actions">
+            <button type="reset" onClick={reSetAll}>Rest</button>
+            <button type="submit">Submit</button>
       </div>
     </Fragment>
   );
