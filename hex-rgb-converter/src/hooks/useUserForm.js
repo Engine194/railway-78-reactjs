@@ -120,7 +120,8 @@ const useUserForm = () => {
         //Call api create user
         console.log("values....", values); // AXIOS == fetch
     };
-    return {
+    return (
+        {
             fullName,
             email,
             phone,
@@ -130,19 +131,19 @@ const useUserForm = () => {
             password,
             confirmPassword,
             api: {
-              onChangeHandleFactory,
-              setFullName,
-              setEmail,
-              setPhone,
-              handleChangeGender,
-              setDateOfBirth,
-              setUserName,
-              setPassword,
-              setConfirmPassword,
-    
+                onChangeHandleFactory,
+                setFullName,
+                setEmail,
+                setPhone,
+                handleChangeGender,
+                setDateOfBirth,
+                setUserName,
+                setPassword,
+                setConfirmPassword,
+                handleSubmit,
             }
-          }
-    
+        }
+    )
 }
 
 export default useUserForm
