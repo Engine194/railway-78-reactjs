@@ -1,9 +1,9 @@
 import CompunentC from "./CompunentC";
 
-const CompunentB = (props) => {
+const CompunentB = () => {
   return (
     <div>
-      <CompunentC {...props} />;
+      <CompunentC />;
     </div>
   );
 };
