@@ -1,42 +1,25 @@
-import { useContext } from "react";
-import { UserFormContext } from "./App";
-import "./NikitaForm.style.css";
-import UserInfomation from "./UserInfomation";
+import React, { Fragment } from 'react'
 
-const NikitaForm = () => {
-  const {
-    fullName,
-    gender,
-    email,
-    username,
-    password,
-    confirmPassword,
-    dateOfBirth,
-    phoneNumber,
-    api: {
-      setFullName,
-      setEmail,
-      setUsername,
-      setPassword,
-      setConfirmPassword,
-      setDateOfBirth,
-      setPhoneNumber,
-      onChangeHandlerFactory,
-      handleChangeGender,
-      handleSubmit,
-    }
-  } = useContext(UserFormContext)
+const UserAuthentication = () => {
+
+    const {
+      username,
+      password,
+      confirmPassword,
+      api:{
+        onChangeHandlerFactory,
+        setUsername,
+        setPassword,
+        setConfirmPassword,
+        
+      }
+    } = useContext(UserFormContext);
+
+    } 
 
   return (
-    <div className="nikita-form-container">
-      <h1>Register new user</h1>
-      <form onSubmit={handleSubmit} className="form-row">
-        <div className="form-col form-col-left">
-          <UserInfomation />
-        </div>
-        <div className="divider"></div>
-        <div className="form-col form-col-right">
-          <h2>Authentication</h2>
+    <Fragment>
+         <h2>Authentication</h2>
           <div className="sub-form">
             <div className="form-control">
               <input
@@ -70,10 +53,9 @@ const NikitaForm = () => {
             <button type="reset">Reset</button>
             <button type="submit">Submit</button>
           </div>
-        </div>
-      </form>
-    </div>
-  );
-};
+        
+    </Fragment>
+  )
 
-export default NikitaForm;
+
+export default UserAuthentication
