@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useContext} from "react";
+import { CountContext } from "./App";
 
-const ComponentC = (props) => {
-  const { count, increaseCountByOne } = props || {};
+const ComponentC = () => {
+  const { count, increaseCountByOne } = useContext(CountContext); // values = {count, increaseCountByOne}
   return (
     <div>
       <h1>Count: {count}</h1>
