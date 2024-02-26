@@ -120,8 +120,7 @@ const useUserForm = () => {
         //Call api create user
         console.log("values....", values); // AXIOS == fetch
     };
-    return (
-        {
+    return {
             fullName,
             email,
             phone,
@@ -143,7 +142,7 @@ const useUserForm = () => {
     
             }
           }
-    )
+    
 }
 
 export default useUserForm

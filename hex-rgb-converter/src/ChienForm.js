@@ -8,9 +8,11 @@ import UserAuthentication from './UserAuthentication';
 // const initialInputValue = { value: "", error: "" };
 
 const ChienForm = () => {
-    const {
-        api: { handleSubmit }
-    } = useContext(UserFormContext);
+    // const {
+    //     api: { handleSubmit }
+    // } 
+    const contextValue = useContext(UserFormContext);
+    console.log('contextValue...', contextValue);
     // const [gender, setGender] = useState({ value: GENDER_TYPE.FEMALE, error: "" });
     // const [fullName, setFullName] = useState(initialInputValue);
     // const [email, setEmail] = useState(initialInputValue);
@@ -131,7 +133,7 @@ const ChienForm = () => {
     return (
         <div className="chien-form-container">
             <h1>Register form</h1>
-            <form onSubmit={handleSubmit} className="form-row">
+            {/* <form onSubmit={handleSubmit} className="form-row">
                 <div className="form-col form-col-left">
                     <UserInformation/>
                 </div>
@@ -140,7 +142,7 @@ const ChienForm = () => {
                     <UserAuthentication/>
                     
                 </div>
-            </form>
+            </form> */}
         </div>
     );
 };

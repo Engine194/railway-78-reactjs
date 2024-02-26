@@ -16,8 +16,8 @@ const UserFormContextProvider = UserFormContext.Provider;
 
 
 function App() {
-  const {userFormState} = useUserForm();
-
+  const userFormState = useUserForm();
+  console.log("userFormState...", userFormState);
   const {
     hex,
     rgb,
