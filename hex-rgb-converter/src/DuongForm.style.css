@@ -1,0 +1,110 @@
+.Duong-form-container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: wheat;
+    border-radius: 5px;
+    padding-bottom: 60px;
+    background-size: 1200px auto;
+    }
+    
+    .Duong-form-container>h1{
+        text-align: center;
+        color: brown;
+    }
+    
+    .form-row{
+        max-width: 740px;
+        margin: 0 auto;
+        display: flex;
+        column-gap: 20px;
+        justify-content: center;
+    }
+    
+    .diviver{
+        width: 2px; 
+        height: auto; 
+        background-color: black; 
+    }
+    
+    
+    .form-col{
+        flex: 1;
+    
+    }
+    
+    .form-col>h2{
+        margin-bottom: 15px;
+        font-style: italic;
+        color: firebrick;
+    }
+    
+    .form-col-left{
+    padding-right: 20px;
+    }
+    
+    .sub-form{
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+    }
+    
+    .form-control>input{
+        width: 90%;
+        outline: none;
+        font-size: large;
+        border: none;
+        background-color: whitesmoke;
+        padding: 10px 10px;
+        border-radius: 5px;
+        font-style: italic;
+        box-shadow: 0.3em 0.4em 0.4em;
+        
+    }
+    
+    .form-control>p{
+        margin-top: 3px;
+        margin-bottom: 0;
+        color: red;
+    }
+    
+    .gender-container{
+        display: flex;
+        column-gap: 12px;
+        justify-content: space-between;
+        font-size: x-large;
+        color: black;
+    }
+    
+    .form-col-right{
+    padding-left: 25px;
+    }
+    
+    .form-actions{
+        margin-top: 62px;
+        display: flex;
+        column-gap: 30px;
+        justify-content: space-between;
+    
+    }
+    .form-actions>button{
+        border: none;
+        outline: none;
+        padding: 10px 20px;
+        font-size: large;
+        border-radius: 5px;
+        transition: opacity 200ms linear;
+        max-width: 87.03px;
+        max-height: 40.8px;
+    }
+    
+    .form-actions>button:hover{
+        opacity: 0.7;
+        cursor: pointer;
+    }
+    
+    .form-actions>button[type="submit"]{
+        color: white;
+        background-color: #1677ff;
+    
+    }
