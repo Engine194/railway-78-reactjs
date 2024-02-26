@@ -1,16 +1,24 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './ChienForm.style.css';
 import { GENDER_TYPE } from "./utils";
 import UserInformation from './UserInformation';
+import { UserFormContext } from './App';
+import UserAuthentication from './UserAuthentication';
+
+// const initialInputValue = { value: "", error: "" };
 
 const ChienForm = () => {
-    const [gender, setGender] = useState(GENDER_TYPE.FEMALE);
-    const [fullName, setFullName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [userName, setUserName] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
+    const {
+        api: { handleSubmit }
+    } = useContext(UserFormContext);
+    // const [gender, setGender] = useState({ value: GENDER_TYPE.FEMALE, error: "" });
+    // const [fullName, setFullName] = useState(initialInputValue);
+    // const [email, setEmail] = useState(initialInputValue);
+    // const [phone, setPhone] = useState(initialInputValue);
+    // const [dateOfBirth, setDateOfBirth] = useState(initialInputValue);
+    // const [userName, setUserName] = useState(initialInputValue);
+    // const [password, setPassword] = useState(initialInputValue);
+    // const [confirmPassword, setConfirmPassword] = useState(initialInputValue);
 
     // const handleChangeFullName = (event) => {
     //     const inputFullName = event.target;
@@ -43,12 +51,39 @@ const ChienForm = () => {
     //     setGender(inputEle.value);
     // }
 
-    const onChangeHandleFactory = (setState) => {
-        return (event) => {
-            const inputEle = event.target;
-            setState(inputEle.value);
-        }
-    }
+    // const onChangeHandleFactory = (setState) => {
+    //     return (event) => {
+    //         const inputEle = event.target;
+    //         setState((previousState) => {
+    //             return { ...previousState, value: inputEle.value };
+    //         });
+    //     }
+    // }
+
+    // const onValidateFactory = (setState) => {
+    //     return (errorMsg) => {
+    //         setState((previousState) => {
+    //             return { ...previousState, error: errorMsg }
+    //         });
+    //     }
+    // }
+
+    // const clearError = () => {
+    //     [
+    //         setGender,
+    //         setFullName,
+    //         setEmail,
+    //         setPhone,
+    //         setDateOfBirth,
+    //         setUserName,
+    //         setPassword,
+    //         setConfirmPassword,
+    //     ].forEach((setState) => {
+    //         setState((previousState) => {
+    //             return { ...previousState, error: "" }
+    //         });
+    //     })
+    // };
 
     // const handleChangeFullName = onChangeHandleFactory(setFullName);
     // const handleChangeEmail = onChangeHandleFactory(setEmail);
@@ -56,85 +91,54 @@ const ChienForm = () => {
     // const handleChangeUserName = onChangeHandleFactory(setUserName);
     // const handleChangePassword = onChangeHandleFactory(setPassword);
     // const handleChangeConfirmPassword = onChangeHandleFactory(setConfirmPassword);
-    const handleChangeGender = onChangeHandleFactory(setGender);
+    // const handleChangeGender = onChangeHandleFactory(setGender);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-    };
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     //validate
+    //     clearError();
+    //     debugger
+
+    //     //validate full name
+    //     if (/[^a-zA-Z ]/.test(fullName.value)) {
+    //         onValidateFactory(setFullName)("fullname is not value...");
+    //         return;
+    //     };
+
+    //     if (/[^01]/.test(gender.value)) {
+    //         onValidateFactory(setGender)("gender is not value...");
+    //         return;
+    //     }
+
+    //     if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value)) {
+    //         onValidateFactory(setEmail)("email is not value...");
+    //         return;
+    //     }
+    //     const values = {
+    //         gender: gender.value, // alphabet
+    //         fullName: fullName.value, // '0', '1'
+    //         email: email.value, // must be an email
+    //         phone: phone.value, // min(9) & max(12)
+    //         userName: userName.value, // alphabet | number && min(5) max(50)
+    //         dateOfBirth: dateOfBirth.value, // must greater than 10
+    //         password: password.value, // min(8) & alphabet(1) & ALPHBET(1) & number(1)
+    //         confirmPassword: confirmPassword.value, // must equal password
+    //     }
+    //     //Call api create user
+    //     console.log("values....", values); // AXIOS == fetch
+    // };
 
     return (
         <div className="chien-form-container">
             <h1>Register form</h1>
             <form onSubmit={handleSubmit} className="form-row">
                 <div className="form-col form-col-left">
-                    <h2>User information</h2>
-                    <div className="sub-form">
-                        <div className="form-control">
-                            <input type="text" name="fullname" placeholder='Fullname...' value={fullName} onChange={onChangeHandleFactory(setFullName)} />
-                            <p>Error fullname</p>
-                        </div>
-
-                        <div className="form-control">
-                            <input type="text" name="email" placeholder='Emaill...' value={email} onChange={onChangeHandleFactory(setEmail)} />
-                        </div>
-
-                        <div className="form-control">
-                            <input type="text" name="phone" placeholder='Phone Number...' value={phone} onChange={onChangeHandleFactory(setPhone)} />
-                        </div>
-
-                        <div className="gender-container">
-                            <span>Gender:</span>
-                            <div className="gender-radio">
-                                <label>
-                                    <input onChange={handleChangeGender} checked={gender === GENDER_TYPE.MALE} type="radio" name="gender" value={GENDER_TYPE.MALE} />
-                                    Male
-                                </label>
-
-                                <label>
-                                    <input onChange={handleChangeGender} checked={gender === GENDER_TYPE.FEMALE} type="radio" name="gender" value={GENDER_TYPE.FEMALE} />
-                                    Female
-                                </label>
-                            </div>
-                        </div>
-                        <div className="form-control">
-                            <input type="date" name="dateOfBirth" />
-                        </div>
-                    </div>
+                    <UserInformation/>
                 </div>
-
-                {/* <UserInformation
-                    fullName={fullName}
-                    email={email}
-                    phone={phone}
-                    gender={gender}
-                    api={{
-                        onChangeHandleFactory,
-                        setFullName,
-                        setEmail,
-                        setPhone,
-                        setGender
-                    }}
-                /> */}
                 <div className="divider"></div>
                 <div className="form-col form-col-right">
-                    <h2>Authentication</h2>
-                    <div className="sub-form">
-                        <div className="form-control">
-                            <input type="text" name="username" placeholder='Username...' value={userName} onChange={onChangeHandleFactory(setUserName)} />
-                        </div>
-
-                        <div className="form-control">
-                            <input type="password" name="password" placeholder='Password...' value={password} onChange={onChangeHandleFactory(setPassword)} />
-                        </div>
-
-                        <div className="form-control">
-                            <input type="password" name="confirmPassword" placeholder='Confirm password...' value={confirmPassword} onChange={onChangeHandleFactory(setConfirmPassword)} />
-                        </div>
-                        <div className="form-actions">
-                            <button type='reset'>Reset</button>
-                            <button type='submit'>Submit</button>
-                        </div>
-                    </div>
+                    <UserAuthentication/>
+                    
                 </div>
             </form>
         </div>

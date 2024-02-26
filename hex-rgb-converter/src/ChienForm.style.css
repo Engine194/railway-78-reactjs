@@ -32,9 +32,9 @@
     margin-bottom: 15px;
 }
 
-/* .form-col-left {
+.form-col-left {
 
-} */
+}
 
 .sub-form {
     display: flex;
@@ -63,9 +63,9 @@
     font-size: large;
 }
 
-/* .form-col-right {
+.form-col-right {
 
-} */
+}
 
 .form-actions {
     margin-top: 30px;
