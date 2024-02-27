@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext } from 'react'
 import { GENDER_TYPE } from './utils'
+import { UserFormContext } from './App';
 
 const UserInformation = (props) => {
     const {
@@ -16,7 +17,7 @@ const UserInformation = (props) => {
             handleChangeGender,
             setDateOfBirth,
         }
-    } = props || {}
+    } = useContext(UserFormContext);
     return (
         <Fragment>
             <h2>User information</h2>

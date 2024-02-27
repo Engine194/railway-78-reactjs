@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { GENDER_TYPE } from '../utils';
 
 const useUserForm = () => {
@@ -51,6 +51,10 @@ const useUserForm = () => {
                 return { ...previousState, value: inputEle.value };
             });
         }
+    }
+
+    const resetFullname = () => {
+        setFullName(initialInputValue);
     }
 
     const onValidateFactory = (setState) => {

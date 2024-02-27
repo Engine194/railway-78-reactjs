@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
 import "./App.css";
 import ArrowLeft from "./ArrowLeft";
 import ArrowRight from "./ArrowRight";
