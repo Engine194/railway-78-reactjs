@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import Age from "./Age";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [age, setAge] = useState(18);
+  const [show, setShow] = useState(true);
+  console.log('1');
+
+  useEffect(() => { // sideEffect
+    console.log('3');
+  });
+
+  useEffect(() => {
+    if (age === 20) {
+      setShow(false);
+    }
+  }, [age]);
+
+  return <main>
+    {console.log('2')}
+    <h1>Hello world</h1>
+    
+    <button onClick={() => {
+      console.log('start...');
+      setAge(prev => prev + 1);
+    }}>Change age</button>
+    {show ? <Age age={age}/> : null}
+  </main>
 }
 
 export default App;
