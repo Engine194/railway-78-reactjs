@@ -5,8 +5,8 @@ import ArrowRight from "./ArrowRight";
 import ColorInput from "./ColorInput";
 import ActionButton from "./ActionButton";
 import { COLOR_TYPE, generateColorInputProps } from "./utils";
-import UserList from "./UserList";
-import UserForm from "./UserForm";
+
+import Menu from "./Menu";
 
 function App() {
   const [hex, setHex] = useState("");
@@ -64,7 +64,9 @@ function App() {
   const rgbInputProps = colorPropsMap.get(COLOR_TYPE.RGB);
 
   return (
-    <div className="App">
+    <>
+      <Menu/>
+      <div className="App">
       <h1 className="greeting-heading">Welcome to Hex-RGB Converter</h1>
       <div
         className="demo-color"
@@ -91,8 +93,10 @@ function App() {
         <ColorInput {...rgbInputProps} />
       </div>
       {/* <UserList/> */}
-      <UserForm/>
-    </div>
+      {/* <UserForm/> */}
+      </div>
+    </>
+    
   );
 }
 
