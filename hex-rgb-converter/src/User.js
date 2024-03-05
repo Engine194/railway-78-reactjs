@@ -1,39 +1,57 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import React, { useEffect, useState } from 'react'
+import { useParams, useSearchParams } from 'react-router-dom'
 import axios from "axios"
 
 const User = () => {
 
-    const {userId} = useParams();
-    console.log("userId...", userId);
+  const {userId} = useParams();
+  const [searchParams] = useSearchParams();
+  
+  console.log("userId...", userId, searchParams.get('gender'));
 
-    const[user, setUser] = useState();
+  // set state
+  const[user, setUser] = useState();
 
+  const history = 
 
+  // call API
+  useEffect(() => {
+    const USER_URL = process.env.REACT_APP_USER_API_URL;
+    axios.get(`${USER_URL}/${userId}`).then(({data}) => {
+        setUser(data);
+    })
+  },[]);
 
-    useEffect(() => {
-        const USER_URL = process.env.REACT_APP_USER_API_URL;
+  console.log("user...", user);
 
-        axios.get(USER_URL + "/" + userId).then(({data}) => {
-            setUser(data);
-        })
-    }, []);
-
-    console.log("user...", user);
-
-    return (   
+  // render UI
+  return (
+    <div>
+        <h1>User Detail</h1>
         <div>
-            <h1>User Detail</h1>
-            <div>
-                <p>Fullname: {user?.fullname}</p>
-                <p>Username: {user?.username}</p>
-                <p>Email: {user?.email}</p>
-                <p>DayOfBirthDate: {user?.dob}</p>
-                <p>Gender: {user?.gender}</p>
-                <p>Favorite: {user?.favorite}</p>
-            </div>
+            {/* {user ? (
+                <>
+                    <p>Fullname: {user.fullname}</p>
+                    <p>Username: {user.username}</p>
+                    <p>Email: {user.email}</p>
+                    <p>Favorite: {user.favorite}</p>
+                    <p>Gender: {user.gender}</p>
+                    <p>Date Of Birth: {user.dob}</p>
+                </>
+            ) : null
+            } */}
+
+                    <p>Fullname: {user?.fullname}</p>
+                    <p>Username: {user?.username}</p>
+                    <p>Email: {user?.email}</p>
+                    <p>Favorite: {user?.favorite}</p>
+                    <p>Gender: {user?.gender}</p>
+                    <p>Date Of Birth: {user?.dob}</p>
+
+            <footer style={{backgroundColor: "red"}}>Footer</footer>
         </div>
-    )
+    </div> 
+  )
 }
 
-export default User;
+export default User

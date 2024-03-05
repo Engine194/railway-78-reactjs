@@ -8,10 +8,8 @@ export default function UserItem(props) {
 
   return (
     <tr>
-      <td>
-        <Link to={`/user-list/${id}`}>{id}</Link>
-      </td>
-      <td>{fullname}</td> 
+      <td><Link to={`/user-list/${id}?gender=${gender}`}>{id}</Link></td>
+      <td>{fullname}</td>
       <td>{username}</td>
       <td>{email}</td>
       <td>{birthDate}</td>
