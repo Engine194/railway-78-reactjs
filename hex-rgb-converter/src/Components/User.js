@@ -12,7 +12,6 @@ const User = () => {
   // set state
   const[user, setUser] = useState();
 
-  const history = 
 
   // call API
   useEffect(() => {

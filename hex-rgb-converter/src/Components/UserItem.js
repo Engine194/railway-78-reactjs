@@ -15,6 +15,13 @@ export default function UserItem(props) {
       <td>{birthDate}</td>
       <td>{gender}</td>
       <td>{favorite}</td>
+      <td>
+        <div>
+          <button>Edit</button>
+          {"|"}
+          <button>Delete</button>
+        </div>
+      </td>
     </tr>
   );
 }
