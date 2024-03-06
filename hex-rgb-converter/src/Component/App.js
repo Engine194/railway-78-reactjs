@@ -1,6 +1,7 @@
-import Age from "./Age";
-import "./App.css";
+import Age from "../Age";
+import "../Styles/App.css";
 import { useEffect, useState} from "react"
+import Menu from "./Menu";
 
 
 function App() {
@@ -13,6 +14,12 @@ function App() {
   });
 
   return <main>
+    <>
+    <Menu/>
+    <div className="App">
+
+    </div>
+    </>
     {console.log('2')}
     <h1>Hello world {age}</h1>
 

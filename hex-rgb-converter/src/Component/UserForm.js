@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { GENDER_TYPE } from "./utils";
+import { GENDER_TYPE } from "../utils";
+import Menu from "./Menu";
 
 export default function UserForm() {
   const [gender, setGender] = useState(GENDER_TYPE.FEMALE);
@@ -10,6 +11,8 @@ export default function UserForm() {
   };
 
   return (
+    <>
+        <Menu/>
     <div className="user-form-container">
       <div className="user-form-inner-wrapper">
         <form className="user-form">
@@ -60,5 +63,6 @@ export default function UserForm() {
         </form>
       </div>
     </div>
+    </>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { COLOR_TYPE } from "./utils";
+import { COLOR_TYPE } from "../utils";
 
 export default function ColorInput(props) { // UI component
   const { label, color, changeColor, type, inputClassName } = props || {};
