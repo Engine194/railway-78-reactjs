@@ -5,8 +5,7 @@ import ArrowRight from "./ArrowRight";
 import ColorInput from "./ColorInput";
 import ActionButton from "./ActionButton";
 import { COLOR_TYPE, generateColorInputProps } from "./utils";
-import UserList from "./UserList";
-import UserForm from "./UserForm";
+import Menu from "./Menu";
 
 function App() {
   const [hex, setHex] = useState("");
@@ -64,35 +63,40 @@ function App() {
   const rgbInputProps = colorPropsMap.get(COLOR_TYPE.RGB);
 
   return (
-    <div className="App">
-      <h1 className="greeting-heading">Welcome to Hex-RGB Converter</h1>
-      <div
-        className="demo-color"
-        style={{
-          backgroundColor: hex ? `#${hex}` : rgb ? `rgb(${rgb})` : "aliceblue",
-        }}
-      />
-      <div className="color-form">
-        <ColorInput {...hexInputProps} />
-        <div className="btn-actions">
-          <ActionButton
-            className="tohex-btn"
-            title="Convert to Hex color"
-            onClick={toHex}
-            Icon={ArrowLeft}
-          />
-          <ActionButton
-            className="torgb-btn"
-            title="Convert to RGB color"
-            onClick={toRgb}
-            Icon={ArrowRight}
-          />
+    <>
+      <Menu />
+      <div className="App">
+        <h1 className="greeting-heading">Welcome to Hex-RGB Converter</h1>
+        <div
+          className="demo-color"
+          style={{
+            backgroundColor: hex
+              ? `#${hex}`
+              : rgb
+              ? `rgb(${rgb})`
+              : "aliceblue",
+          }}
+        />
+        <div className="color-form">
+          <ColorInput {...hexInputProps} />
+          <div className="btn-actions">
+            <ActionButton
+              className="tohex-btn"
+              title="Convert to Hex color"
+              onClick={toHex}
+              Icon={ArrowLeft}
+            />
+            <ActionButton
+              className="torgb-btn"
+              title="Convert to RGB color"
+              onClick={toRgb}
+              Icon={ArrowRight}
+            />
+          </div>
+          <ColorInput {...rgbInputProps} />
         </div>
-        <ColorInput {...rgbInputProps} />
       </div>
-      {/* <UserList/> */}
-      <UserForm/>
-    </div>
+    </>
   );
 }
 
