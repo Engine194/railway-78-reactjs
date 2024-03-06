@@ -1,6 +1,13 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import Age from "./Age";
+import "./index.css";
+import UserForm from "./UserForm";
+import UserList from "./UserList";
+import Menu from "./Menu";
+import React from "react";
+import { ReactDOM } from "react";
+import { routeMaps } from ".";
 
 function App() {
   const [age, setAge] = useState(18);
@@ -11,7 +18,8 @@ function App() {
   });
 
   return (
-    <main>
+    <>
+      <Menu />
       {console.log("2")}
       <div className="App">Hello world</div>
 
@@ -24,7 +32,7 @@ function App() {
         Change age
       </button>
       <Age age={age} />
-    </main>
+    </>
   );
 }
 
