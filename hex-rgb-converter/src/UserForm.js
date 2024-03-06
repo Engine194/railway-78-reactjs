@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Menu from "./Menu";
 import { GENDER_TYPE } from "./utils";
 
 export default function UserForm() {
@@ -10,6 +11,8 @@ export default function UserForm() {
   };
 
   return (
+    <>
+    <Menu />
     <div className="user-form-container">
       <div className="user-form-inner-wrapper">
         <form className="user-form">
@@ -60,5 +63,6 @@ export default function UserForm() {
         </form>
       </div>
     </div>
+    </>
   );
 }

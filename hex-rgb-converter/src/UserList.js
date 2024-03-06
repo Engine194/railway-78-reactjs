@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loading from "./Loading";
+import Menu from "./Menu";
 import { User } from "./model/user";
 import UserItem from "./UserItem";
 
@@ -33,6 +34,8 @@ export default function UserList() {
     return <Loading />;
   } else if (data?.length > 0) {
     return (
+      <>
+      <Menu/>
       <table>
         <thead>
           <tr>
@@ -52,6 +55,7 @@ export default function UserList() {
           })}
         </tbody>
       </table>
+      </>
     );
   } else {
     return null;
