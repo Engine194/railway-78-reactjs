@@ -27,27 +27,14 @@ export const routeMap = [
     element:<UserList/>,
     label:'UserList'
   },
-]
-
-const router = createBrowserRouter([
-  { 
-    path: "/",
-    element: <App/>
-  },
-  {
-    path: '/UserForm',
-    element: <UserForm/>
-  },
-  {
-    path: '/UserList',
-    element:<UserList/>
-  },
   {
     path: "/user-list/:userId",
     element: <User/>,
-
+  
   }
-]);
+]
+
+const router = createBrowserRouter(routeMap);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
