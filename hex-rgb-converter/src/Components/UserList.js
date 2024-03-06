@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Loading from "./Loading";
-import { User } from "./model/user";
+import Loading from "../Loading";
+import { User } from "../model/user";
 import UserItem from "./UserItem";
 import Menu from "./Menu";
 
@@ -46,6 +46,7 @@ export default function UserList() {
               <th>BirthDate</th>
               <th>Gender</th>
               <th>Favorite</th>
+              <th>Actions {"|"}<button>new</button></th>
             </tr>
           </thead>
           <tbody>

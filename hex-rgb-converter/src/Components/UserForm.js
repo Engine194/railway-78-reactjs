@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GENDER_TYPE } from "./utils";
+import { GENDER_TYPE } from "../utils";
 import Menu from "./Menu";
 
 export default function UserForm() {
