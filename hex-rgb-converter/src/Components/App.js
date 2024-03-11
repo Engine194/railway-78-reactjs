@@ -1,12 +1,13 @@
 import { useState } from "react";
-import "./App.css";
-import ArrowLeft from "./ArrowLeft";
-import ArrowRight from "./ArrowRight";
+import "../style/App.css";
+import ArrowLeft from "./Icons/ArrowLeft";
+import ArrowRight from "./Icons/ArrowRight";
 import ColorInput from "./ColorInput";
 import ActionButton from "./ActionButton";
-import { COLOR_TYPE, generateColorInputProps } from "./utils";
+import { COLOR_TYPE, generateColorInputProps } from "../utils";
 import UserList from "./UserList";
 import UserForm from "./UserForm";
+import Menu from "./Menu";
 
 function App() {
   const [hex, setHex] = useState("");
@@ -91,7 +92,8 @@ function App() {
         <ColorInput {...rgbInputProps} />
       </div>
       {/* <UserList/> */}
-      <UserForm/>
+      {/* <UserForm/> */}
+      <Menu/>
     </div>
   );
 }

@@ -1,13 +1,23 @@
 import React, { useEffect, useState } from "react";
-import Loading from "./Loading";
-import { User } from "./model/user";
+import Loading from "../Loading";
+import { User } from "../model/user";
 import UserItem from "./UserItem";
+import Modal from "./Modal";
+import UserForm from "./UserForm";
 
+const initialShowModal = {
+  open: false,
+  data: null,
+}
 export default function UserList() {
   const [data, setData] = useState([]);
   const [error, setError] = useState();
+  const [showModal, setShowModal] = useState(initialShowModal);
   const [loading, setLoading] = useState(true);
 
+  const pushUser = (newUser) => {
+    setData(prev => )
+  }
   const fetchData = async () => {
     const USER_URL = process.env.REACT_APP_USER_API_URL;
     if (USER_URL) {
@@ -23,6 +33,21 @@ export default function UserList() {
     }
   };
 
+  const handleCloseModal = () => setShowModal(prev => {
+    return {
+      ...prev,
+      open: false,
+    }
+  });
+
+  const handleOpenModal = (data) => {
+    return(event) => {
+      setShowModal({
+        open: true, 
+        data: data,
+      })
+    }
+  } 
   useEffect(() => {
     fetchData();
   }, []);
@@ -33,6 +58,7 @@ export default function UserList() {
     return <Loading />;
   } else if (data?.length > 0) {
     return (
+      <>
       <table>
         <thead>
           <tr>
@@ -43,6 +69,7 @@ export default function UserList() {
             <th>BirthDate</th>
             <th>Gender</th>
             <th>Favorite</th>
+            <th>Actions {"|"}<button type="button" onClick={handleOpenModal(null)}>new</button></th>
           </tr>
         </thead>
         <tbody>
@@ -52,6 +79,15 @@ export default function UserList() {
           })}
         </tbody>
       </table>
+      <Modal
+        open={showModal.open}
+        closeModal={handleCloseModal}
+        title={showModal.data?.id ? "Edit user" : "Create user"}
+
+      >
+        <UserForm data={showModal.data}></UserForm>
+      </Modal>
+      </>
     );
   } else {
     return null;

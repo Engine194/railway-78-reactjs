@@ -1,6 +1,6 @@
 export const GENDER_TYPE = {
-  MALE: "1",
-  FEMALE: "0",
+  MALE: true,
+  FEMALE: false,
 };
 
 export const COLOR_TYPE = {
