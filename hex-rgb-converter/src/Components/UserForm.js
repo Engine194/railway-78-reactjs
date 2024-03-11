@@ -12,7 +12,7 @@ const initialUser = {
   id: "",
 };
 
-export default function UserForm({ data, pushUser, closeModal }) {
+export default function UserForm({ data, updateUser, pushUser, closeModal }) {
   const [user, setUser] = useState(data || initialUser);
   const [loading, setLoading] = useState(false);
 
@@ -31,15 +31,24 @@ export default function UserForm({ data, pushUser, closeModal }) {
   const handleSubmit = (event) => {
     setLoading(true);
     event.preventDefault();
+    const userParams = {
+      ...user,
+      gender: user.gender === GENDER_TYPE.MALE,
+    };
+    const USER_URL = process.env.REACT_APP_USER_API_URL;
     if (data) {
       // edit user
+      axios
+        .put(USER_URL + "/" + userParams.id, userParams)
+        .then(({ data }) => {
+          updateUser(data);
+          closeModal();
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     } else {
       // create user
-      const userParams = {
-        ...user,
-        gender: user.gender === GENDER_TYPE.MALE,
-      };
-      const USER_URL = process.env.REACT_APP_USER_API_URL;
       axios
         .post(USER_URL, userParams)
         .then(({ data }) => {
