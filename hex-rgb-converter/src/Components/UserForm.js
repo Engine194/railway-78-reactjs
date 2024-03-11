@@ -12,7 +12,7 @@ const initialUser = {
   id: "",
 };
 
-export default function UserForm({ data, pushUser, closeModal }) {
+export default function UserForm({ data, updateUser, pushUser, closeModal }) {
   // console.log("data...", data);
   const [user, setUser] = useState(data || initialUser);
   const [loading, setLoading] = useState(false);
@@ -31,18 +31,29 @@ export default function UserForm({ data, pushUser, closeModal }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const userParams = {
+      ...user,
+      gender: user.gender === GENDER_TYPE.MALE,
+    };
+    const USER_URL = process.env.REACT_APP_USER_API_URL;
 
-    if(data) {
+    if (data) {
       // edit user
+      console.log("userPrams...", userParams);
+      const USER_URL = process.env.REACT_APP_USER_API_URL;
+
+      axios
+        .put(`${USER_URL}/${userParams.id}`, userParams)
+        .then(({ data }) => {
+          updateUser(data);
+          closeModal();
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     } else {
       // create user
-      const userParams = {
-        ...user,
-        gender: user.gender === GENDER_TYPE.MALE,
-      };
-      // console.log("userParams...", userParams);
-  
-      const USER_URL = process.env.REACT_APP_USER_API_URL;
+
       axios
         .post(USER_URL, userParams)
         .then((data) => {
@@ -141,12 +152,21 @@ export default function UserForm({ data, pushUser, closeModal }) {
             />
 
             <div className="form-actions">
-              <button className="form-btn btn-reset" type="reset" onClick={() => {
-                setUser(data || initialUser);
-              }} disabled={loading}>
+              <button
+                className="form-btn btn-reset"
+                type="reset"
+                onClick={() => {
+                  setUser(data || initialUser);
+                }}
+                disabled={loading}
+              >
                 Reset
               </button>
-              <button className="form-btn btn-submit" type="submit" disabled={loading}>
+              <button
+                className="form-btn btn-submit"
+                type="submit"
+                disabled={loading}
+              >
                 Submit
               </button>
             </div>
