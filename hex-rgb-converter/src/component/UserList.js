@@ -5,6 +5,8 @@ import UserItem from "./UserItem";
 import Menu from "./Menu";
 import Modal from "./Modal";
 import UserForm from "./UserForm";
+import { GENDER_TYPE } from "../utils";
+import ConfirmDelete from "./ConfirmDelete";
 
 const initialShowModal = {
   open: false,
@@ -16,10 +18,35 @@ export default function UserList() {
   const [error, setError] = useState();
   const [showModal, setShowModal] = useState(initialShowModal);
   const [loading, setLoading] = useState(true);
+  const [showDelete, setShowDelete] = useState(initialShowModal);
 
   const pushUser = (newUser) => {
     setData((prev) => [...prev, newUser]);
   };
+
+  const updateUser = (updatedUser) => {
+    setData((prev) => {
+      return prev.map((item) => {
+        if (item.id == updatedUser.id) {
+          return updatedUser;
+        } else {
+          return item;
+        }
+      });
+    });
+  };
+
+  const removeUser = (deleteUser) => {
+    setData((prev) => {
+      return prev.filter((item) => {
+        if (item.id == deleteUser.id) {
+          return false
+        } else {
+          return true
+        }
+      });
+    });
+  }
 
   const fetchData = async () => {
     const USER_URL = process.env.REACT_APP_USER_API_URL;
@@ -52,6 +79,23 @@ export default function UserList() {
       });
     };
   };
+
+  const handleOpenDelete = (data) => {
+    return (event) => {
+      setShowDelete({
+        open: true,
+        data,
+      });
+    };
+  };
+
+  const handleCloseDelete = () =>
+    setShowDelete((prev) => {
+      return {
+        ...prev,
+        open: false,
+      };
+    });
 
   useEffect(() => {
     fetchData();
@@ -86,7 +130,19 @@ export default function UserList() {
           <tbody>
             {data.map((user, index) => {
               const current = new User(user);
-              return <UserItem key={index} data={current} />;
+              const edittingUser = {
+                ...user,
+                dob: user.dob.split("T")[0],
+                gender: user.gender ? GENDER_TYPE.MALE : GENDER_TYPE.FEMALE,
+              }
+              return (
+                <UserItem
+                  key={index}
+                  data={current}
+                  openModal={handleOpenModal(edittingUser)}
+                  openDelete={handleOpenDelete(user)}
+                />
+              );
             })}
           </tbody>
         </table>
@@ -99,7 +155,15 @@ export default function UserList() {
             data={showModal.data}
             pushUser={pushUser}
             closeModal={handleCloseModal}
+            updateUser={updateUser}
           />
+        </Modal>
+        <Modal
+          open={setShowDelete.open}
+          closeModal={handleCloseDelete}
+          title={"Confirm delete user"}
+        >
+          <ConfirmDelete data={showDelete.data} removeUser={handleCloseModal}/>
         </Modal>
       </>
     );

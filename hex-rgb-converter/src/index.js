@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './component/App';
+import './style/Index.css';
+import App from './Component/App';
 import reportWebVitals from './reportWebVitals';
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import UserForm from './component/UserForm';
-import UserList from './component/UserList';
-import User from './component/User';
+import UserForm from './Component/UserForm';
+import UserList from './Component/UserList';
+import User from './Component/User';
 
 export const routeMaps = [
 
@@ -18,16 +18,19 @@ export const routeMaps = [
     path: '/',
     element: <App/>,
     label: 'Home',
+    isMain: true
   },
   {
     path: '/user-form',
     element: <UserForm/>,
     label: 'User form',
+    isMain: true
   },
   {
     path: '/user-list',
     element: <UserList/>,
     label: 'User list',
+    isMain: true
   },
   {
     path: '/user-list/:userId',

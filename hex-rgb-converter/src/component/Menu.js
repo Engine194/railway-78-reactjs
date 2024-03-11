@@ -1,5 +1,5 @@
 import React from "react";
-import { routeMaps } from "../Index";
+import { routeMaps } from "..";
 import { Link } from "react-router-dom";
 
 const Menu = () => {

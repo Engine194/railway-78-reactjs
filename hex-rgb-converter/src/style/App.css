@@ -11,6 +11,10 @@
   margin-right: auto;
 }
 
+.user-form-container.loading {
+  opacity: 0.7;
+}
+
 .demo-color {
   height: 200px;
   background-color: aliceblue;
@@ -131,7 +135,7 @@
 
 .user-form-inner-wrapper {
   max-width: 640px;
-  margin: 50px auto;
+  margin: 10px auto;
   background-color: azure;
   padding: 30px;
   border-radius: 5px;
