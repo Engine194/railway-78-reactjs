@@ -12,7 +12,7 @@ const User = () => {
     useEffect(() => {
         //goi API
         const USER_URL = process.env.REACT_APP_USER_API_URL;
-        axios.get(USER_URL + '/' + userId).then(({data}) => {
+        axios.get(USER_URL + '/' + userId).then(({ data }) => {
             //cap nhat state
             setUser(data);
         })
@@ -30,6 +30,8 @@ const User = () => {
                 <p>Email: {user?.email}</p>
                 <p>Date of birth: {user?.dob}</p>
                 <p>Favorite: {user?.favorite}</p>
+                <footer style={{ backgroundColor: 'red' }}>Footer</footer>
+
             </div>
         </div>
     )

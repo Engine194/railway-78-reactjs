@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './component/App';
 import reportWebVitals from './reportWebVitals';
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import UserForm from './UserForm';
-import UserList from './UserList';
-import User from './User';
+import UserForm from './component/UserForm';
+import UserList from './component/UserList';
+import User from './component/User';
 
 export const routeMaps = [
 
