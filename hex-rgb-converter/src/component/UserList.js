@@ -159,11 +159,11 @@ export default function UserList() {
           />
         </Modal>
         <Modal
-          open={setShowDelete.open}
+          open={showDelete.open}
           closeModal={handleCloseDelete}
           title={"Confirm delete user"}
         >
-          <ConfirmDelete data={showDelete.data} removeUser={handleCloseModal}/>
+          <ConfirmDelete data={showDelete.data} removeUser={removeUser} closeModal={handleCloseDelete}/>
         </Modal>
       </>
     );

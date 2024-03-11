@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import '../styles/delete.css';
 
 const ConfirmDelete = (props) => {
     const [loading, setLoading] = useState(false);
@@ -10,7 +11,7 @@ const ConfirmDelete = (props) => {
         const USER_URL = process.env.REACT_APP_USER_API_URL;
         axios
             .delete(USER_URL + '/' + data.id)
-            .then((data) => {
+            .then(({data}) => {
                 removeUser(data);
                 closeModal();
             })
@@ -19,9 +20,9 @@ const ConfirmDelete = (props) => {
             });
     };
     return (
-        <div className=''>
-            <h2>Are u sure to delete user: {data.email}?</h2>
-            <div>
+        <div className={`root ${loading ? loading : ''}`}>
+            <p>Are u sure to delete user: {data.email}?</p>
+            <div className={'formActions'}>
                 <button onClick={closeModal} disabled={loading}>Cancle</button>
                 <button onClick={handleDelete} disabled={loading}>OK</button>
             </div>
