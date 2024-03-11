@@ -1,39 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './Styles/index.css';
+import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
 // import * as ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import UserForm from './UserForm';
-import UserList from './UserList';
-import User from './User';
+import UserForm from './Components/UserForm';
+import UserList from './Components/UserList';
+import User from './Components/User';
 
  export const routeMaps = [
   {
     path: '/',
     element: <App/>,
     lable: 'Home',
+    isMain: true,
   }
     ,
-  {
-    path: '/user-form',
-    element: <UserForm/>,
-    lable: 'User form',
-  },
+  // {
+  //   path: '/user-form',
+  //   element: <UserForm/>,
+  //   lable: 'User form',
+  // },
   {
     path: '/user-list',
     element: <UserList/>,
     lable: 'User list',
+    isMain: true,
   },
   
   {
     path:'/user-list/:userId',
     element: <User/>,
     lable: "User detali",
+    isMain: true,
   }
 
  ]
