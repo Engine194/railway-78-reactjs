@@ -5,11 +5,13 @@ const Tai = () => {
   const [textLeft, setTextLeft] = useState('');
 
   const handleMoveToRight = ()=>{
+    setTextLeft("");
     setTextRight(textLeft);
     console.log("...",textLeft);
   };
   const handleMoveToLeft = ()=>{
     setTextLeft(textRight);
+    setTextRight("");
     console.log("...",textRight);
 
   };
