@@ -2,9 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function UserItem(props) {
-  const {
-    data: { id, fullname, username, email, birthDate, gender, favorite },
-  } = props;
+  const {data, openModal, openDelete} = props;
+  const { id, fullname, username, email, birthDate, gender, favorite } = data
 
   return (
     <tr>
@@ -15,10 +14,12 @@ export default function UserItem(props) {
       <td>{birthDate}</td>
       <td>{gender}</td>
       <td>{favorite}</td>
-      <td>Actions</td>
+      
       <td>
         <div>
-          
+          <button type="button" onClick={openModal}>edit</button>
+          {"|"}
+          <button type="button" onClick={openDelete}>delete</button>
         </div>
       </td>
     </tr>

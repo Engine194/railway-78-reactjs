@@ -5,13 +5,13 @@ import { GENDER_TYPE } from "../utils";
 const initialUser = {
   email: "",
   fullname: "",
-  gender: false,
+  gender: GENDER_TYPE.false,
   dob: "",
   favorite: "",
   id: ""
 }
 
-export default function UserForm({data, pushUser, closeModal}) {
+export default function UserForm({data, updateUser, pushUser, closeModal}) {
   console.log('data...', data)
   const [user,setUser] = useState(data || initialUser);
   const [loading, setLoading] = useState(false)
@@ -30,22 +30,32 @@ export default function UserForm({data, pushUser, closeModal}) {
   const handleSubmit = (event) => {
     setLoading(true)
     event.preventDefault()
+    const userParams = {
+      ...user,
+      gender: user.gender === GENDER_TYPE.MALE  
+  }
+  const USER_URL = process.env.REACT_APP_USER_API_URL;
     if(data){
       //edit user
+      
+      axios.put(`${USER_URL}/${userParams.id}`, userParams).then(({data}) => {
+        console.log('data...',data)
+        updateUser(data)
+        closeModal()
+    })
+    .finally(() => {
+      setLoading(false)
+    })
     }else {
-       console.log('user...', user)
-      const useParams = {
-        ...user,
-        gender: user.gender === GENDER_TYPE.MALE 
-    }
-    const USER_URL = process.env.REACT_APP_USER_API_URL;
-    axios.post(USER_URL, useParams).then((data) => {
+      //create user
+
+    axios.post(USER_URL, userParams).then((data) => {
       console.log("data...",data)
       pushUser(data)
       closeModal()
-    }).finally(() => {
+    })
+    .finally(() => {
       setLoading(false)
-      
     })
   }
 
