@@ -1,33 +1,38 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom/client";
-import reportWebVitals from "./reportWebVitals";
-import "../src/style/index.css";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./style/index.css";
 import App from "./Components/App";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import UserForm from "./Components/UserForm";
-import UserItem from "./Components/UserItem";
-import User from "./Components/User";
+import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import UserList from "./Components/UserList";
-
-export const routeMaps = ([
+import User from "./Components/User";
+import ChienNguyen from "./Components/ChienNguyen";
+export const routeMaps = [
   {
     path: "/",
-    element: <App/>,
-    label: "home"
+    element: <App />,
+    label: "Home",
+    isMain: true,
   },
   {
-    path: "/user-item",
-    element: <UserList/>,
-    label: "userList"
+    path: "/user-list",
+    element: <UserList />,
+    label: "User list",
+    isMain: true,
   },
   {
     path: "/user-list/:userId",
     element: <User/>,
+    label: "User detail",
+    isMain: false,
+  },
+  {
+    path: "/chiennguyen",
+    element: <ChienNguyen/>,
+    label: "InBox",
+    isMain: true,
   }
-]);
+];
 
 const router = createBrowserRouter(routeMaps);
 
@@ -37,3 +42,8 @@ root.render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

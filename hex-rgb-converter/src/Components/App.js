@@ -8,6 +8,7 @@ import { COLOR_TYPE, generateColorInputProps } from "../utils";
 import UserList from "./UserList";
 import UserForm from "./UserForm";
 import Menu from "./Menu";
+import ChienNguyen from "./ChienNguyen";
 
 function App() {
   const [hex, setHex] = useState("");
