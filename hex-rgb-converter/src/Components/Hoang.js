@@ -1,6 +1,7 @@
 import React from 'react'
 import "../styles/hoang.css"
 const Hoang = () => {
+  // ve code lai
   return (
     <div className='all-container'>
         
