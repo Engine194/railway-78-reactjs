@@ -16,12 +16,12 @@ const DucPhan = () => {
     }
 
     const moveToHex = () => {
-        const newVal = convertRgb2Hex(toHex)
+        const newVal = convertRgb2Hex(toRgb)
         setTohex(newVal)
     }
 
     const moveToRgb = () => {
-        const newVal = convertHex2Rgb(toRgb)
+        const newVal = convertHex2Rgb(toHex)
         setToRgb(newVal)
     }
 
