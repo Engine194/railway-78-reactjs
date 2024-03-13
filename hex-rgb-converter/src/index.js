@@ -11,6 +11,7 @@ import {
 import UserForm from './Component/UserForm';
 import UserList from './Component/UserList';
 import User from './Component/User';
+import ChienVD from './Component/ChienVD';
 
 export const routeMaps = [
 
@@ -36,6 +37,13 @@ export const routeMaps = [
     path: '/user-list/:userId',
     element: <User/>,
     label: 'User details', 
+    isMain: true
+  },
+  {
+    path: '/chienvd',
+    element: <ChienVD/>,
+    label: 'Exercise1', 
+    isMain: true
   }
 ]
 

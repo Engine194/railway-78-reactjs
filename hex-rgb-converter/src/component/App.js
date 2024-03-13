@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../style/App.css";
+import "../styles/App.css";
 import ArrowLeft from "./Icon/ArrowLeft";
 import ArrowRight from "./Icon/ArrowRight";
 import ColorInput from "./ColorInput";
