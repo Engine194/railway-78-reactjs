@@ -10,6 +10,7 @@ import {
 import UserList from './Components/UserList';
 import App from './Components/App';
 import User from './Components/User';
+import Hoang from './Components/Hoang';
 
 
 export const routesMap = [
@@ -32,7 +33,16 @@ export const routesMap = [
     label: "User detail",
     isMain: true,
 
+  },
+
+  {
+    path: "/hoang",
+    element: <Hoang/>,
+    label: "exercise1",
+    isMain: true,
+
   }
+
 
 ]
 
