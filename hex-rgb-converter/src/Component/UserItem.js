@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 
 export default function UserItem(props) {
   const {
-    data: { id, fullname, username, email, birthDate, gender, favorite },
+    data,
+    openModal,
+    openDelete,
   } = props;
+
+  const { id, fullname, username, email, birthDate, gender, favorite } = data;
+
 
   return (
     <tr>
@@ -15,6 +20,13 @@ export default function UserItem(props) {
       <td>{birthDate}</td>
       <td>{gender}</td>
       <td>{favorite}</td>
+      <td>
+        <div>
+          <button type="button" onClick={openModal}>Update</button>
+          {"|"}
+          <button type="button" onClick={openDelete}>Delete</button>
+        </div>
+      </td>
     </tr>
   );
 }

@@ -1,12 +1,10 @@
 import { useState } from "react";
-import "./App.css";
-import ArrowLeft from "./ArrowLeft";
-import ArrowRight from "./ArrowRight";
+import "./styles/App.css";
+import ArrowLeft from "./Icons/ArrowLeft";
+import ArrowRight from "./Icons/ArrowRight";
 import ColorInput from "./ColorInput";
 import ActionButton from "./ActionButton";
-import { COLOR_TYPE, generateColorInputProps } from "./utils";
-import UserList from "./UserList";
-import UserForm from "./UserForm";
+import { COLOR_TYPE, generateColorInputProps } from ".";
 import Menu from "./Menu";
 
 function App() {

@@ -1,36 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './Component/styles/index.css';
+import App from './Component/App';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import UserForm from './UserForm';
-import UserList from './UserList';
-import User from './User';
+import UserList from './Component/UserList';
+import User from './Component/User';
 
 export const routeMap = [
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
     label: 'Home',
+    isMain: true
   },
-  {
-    path: '/UserForm',
-    element: <UserForm/>,
-    label: 'UserForm'
-  },
+ 
   {
     path: '/UserList',
-    element:<UserList/>,
-    label:'UserList'
+    element: <UserList />,
+    label: 'UserList',
+    isMain: true
   },
   {
     path: "/user-list/:userId",
-    element: <User/>,
-  
+    element: <User />,
+    isMain: false
   }
 ]
 
@@ -39,7 +36,7 @@ const router = createBrowserRouter(routeMap);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
