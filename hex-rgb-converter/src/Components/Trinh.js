@@ -1,32 +1,53 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import "../styles/trinh.css";
 
-
 const Trinh = () => {
-  const [text, setText] = useState("");
- 
-console.log(text);
+  const [textA, setTextA] = useState("");
+  const [textB, setTextB] = useState("");
+
+  const handleChangeA = (e) => setTextA(e.target.value);
+  const handleChangeB = (e) => setTextB(e.target.value);
+
+  const toLeft = () => {
+    setTextB(textA);
+    setTextA("");
+  }
+
+  const toRight = () => {
+    setTextA(textB);
+    setTextB("");
+  }
+
   return (
     <>
-    <div className='container-mess'>
-        <div className='input-mess'>
-            <input className='input-text' placeholder='...input your message' value={text}></input>
+      <div className="container-mess">
+        <div className="input-mess">
+          <input
+            className="input-text"
+            placeholder="...input your message"
+            value={textA}
+            onChange={handleChangeA}
+          />
         </div>
 
         <div>
-        <div className='btn'>
-            <button className='btn-input' >Move to left</button>
-            <button className='btn-input'>Move to right</button>
-            </div>
+          <div className="btn">
+            <button onClick={toLeft} className="btn-input">Move to left</button>
+            <button onClick={toRight} className="btn-input">Move to right</button>
+          </div>
         </div>
 
-        <div className='input-mess'>
-            <input className='input-text' placeholder='...input your message'></input>
+        <div className="input-mess">
+          <input
+            className="input-text"
+            placeholder="...input your message"
+            value={textB}
+            onChange={handleChangeB}
+          />
         </div>
-
-    </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Trinh
+export default Trinh;
