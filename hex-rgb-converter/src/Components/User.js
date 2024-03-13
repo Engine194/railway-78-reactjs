@@ -11,7 +11,7 @@ const User = () => {
     // dung useEffect de goi API
     useEffect (()=>{
         // Goi API USER_URL = process.env.REACT_APP_USER_API_URL
-        const USER_URL = process.env.REACT_APP_USER_API_URL
+        const USER_URL = process.env.REACT_APP_USER_API_URL;
         // USER_DETAIL_URL = USER_URL + "/userId" -> GET 
         axios.get(`${USER_URL}/${userId}`)
         .then(({data})=>{

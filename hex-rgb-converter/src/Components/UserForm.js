@@ -13,7 +13,7 @@ const initialUser={
   id: "",
 }
 
-export default function UserForm({data, pushUser, closeModal}) {
+export default function UserForm({data, updatedUser, pushUser, closeModal}) {
   const [user, setUser] = useState( data || initialUser) ;
   const [loading, setLoading] = useState();
   const handleChangeFactory = (useKey)=>{
@@ -31,16 +31,22 @@ export default function UserForm({data, pushUser, closeModal}) {
   const handleSubmit = (event)=>{
     setLoading(true);
     event.preventDefault();
+    const userParams = {
+      ...user,
+      gender: user.gender === GENDER_TYPE.MALE
+    };
+    const USER_URL = process.env.REACT_APP_USER_API_URL;
     if(data){
-
+     
+      axios.put(`${USER_URL}/${userParams.id}`, userParams)
+      .then(({data})=>{
+        updatedUser(data);
+        closeModal();
+      })
     }else{
-      
-      const userParams = {
-        ...user,
-        gender: user.gender === GENDER_TYPE.MALE
-      }
-      const USER_URL = process.env.REACT_APP_USER_API_URL
-      axios.post(USER_URL,userParams).then(({data})=>{
+      axios
+      .post(USER_URL, userParams)
+      .then(({data})=>{
         pushUser(data);
         closeModal();
       }).finally(()=>{
