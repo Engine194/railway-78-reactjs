@@ -11,6 +11,7 @@ import {
 import UserForm from './Components/UserForm';
 import UserList from './Components/UserList';
 import User from './Components/User';
+import Tai from './Components/Tai';
 
  export const routeMaps = [
   {
@@ -36,6 +37,13 @@ import User from './Components/User';
     path:'/user-list/:userId',
     element: <User/>,
     lable: "User detali",
+    isMain: true,
+  },
+
+  {
+    path:'/thanhtai',
+    element: <Tai/>,
+    lable: "Exercise1",
     isMain: true,
   }
 
