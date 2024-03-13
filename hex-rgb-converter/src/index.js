@@ -10,25 +10,32 @@ import {
 import UserList from './Components/UserList';
 import User from './Components/User'
 import App from './Components/App';
+import Thanh from './Components/Thanh';
 
 export const routeMaps = [
   {
     path: "/",
     element: <App/>,
     label: "Home",
-    isMain: "true"
+    isMain: true
   },
   {
     path: "/user-list",
     element: <UserList/>,
     label: "User list",
-    isMain: "true"
+    isMain: true
   },
   {
     path: "user-list/:userId",
     element: <User/>,
     label: "User detail",
-    isMain: "false"
+    isMain: false
+  },
+  {
+    path: "/Thanh",
+    element: <Thanh/>,
+    label: "Exercise1",
+    isMain: true
   }
 ]
 

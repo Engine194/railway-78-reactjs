@@ -195,3 +195,34 @@ input {
   cursor: pointer;
   background-color: rgba(231, 12, 12, 0.7);
 }
+
+
+
+
+.container {
+    background: #f1f1f1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.container-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input {
+  /* height: 50px; */
+  /* width: 100px; */
+}
+
+.input-left {
+  height: 50px;
+}
+
+.input-right {
+  height: 50px;
+}
