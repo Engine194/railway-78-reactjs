@@ -1,0 +1,38 @@
+
+
+.input {
+    margin-top: 50px;
+    width: 1000px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    border: none;
+    outline: none;
+}
+
+.input-left {
+    float: left;
+     margin: 18px;
+    border: none;
+    outline: none;
+}
+
+.input-right {
+    margin: 18px;
+    float: right;
+    border: none;
+    outline: none;
+}
+
+.btn {
+    cursor: pointer;
+    padding-bottom: 12px;
+    margin: 20px;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: #d65b09;
+}
