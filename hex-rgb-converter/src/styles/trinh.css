@@ -1,0 +1,41 @@
+
+.container-mess {
+    border: 2px solid darkgreen;
+    max-width: 700px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    padding-top: 50px;
+}
+
+.input-mess{
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.btn{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.btn-input{
+    height: 30px;
+    border-radius: 8px;
+    background-color: azure;
+    font-weight: bold;
+
+}
+
+.input-text{
+    height: 40px;
+    border: 2px solid orangered;
+    font-size: large;
+    padding-left: 10px;
+}
+
+.btn-input:hover{
+    cursor: pointer;
+}

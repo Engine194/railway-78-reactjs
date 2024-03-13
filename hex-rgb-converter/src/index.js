@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import UserList from "./Components/UserList";
 import User from "./Components/User";
+import Trinh from "./Components/Trinh";
 
 export const routeMaps = [
   {
@@ -25,6 +26,12 @@ export const routeMaps = [
     element: <User/>,
     label: "User detail",
     isMain: false,
+  },
+  {
+    path: "/Trình",
+    element: <Trinh/>,
+    label: "Exercise1",
+    isMain: true,
   }
 ];
 

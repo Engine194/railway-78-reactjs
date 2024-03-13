@@ -23,7 +23,7 @@ const ConfirmDelete = (props) => {
 
   return (
     <div className={`root ${loading ? 'loading' : ''}`}>
-      <p>Are you sure to delete user: {data.email}?</p>
+      <p>Are you sure to delete user: {data.username}?</p>
       <div className={'formActions'}>
         <button type="button" onClick={closeModal} disabled={loading}>Cancel</button>
         <button type="button" onClick={handleDelete} disabled={loading}>OK</button>
