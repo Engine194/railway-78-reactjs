@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import UserList from './Component/UserList';
 import User from './Component/User';
+import DucPhan from './Component/DucPhan';
 
 export const routeMap = [
   {
@@ -28,7 +29,14 @@ export const routeMap = [
     path: "/user-list/:userId",
     element: <User />,
     isMain: false
-  }
+  },
+  {
+    path: '/ducphan',
+    element: <DucPhan />,
+    label: 'Exercise1',
+    isMain: true
+  },
+
 ]
 
 const router = createBrowserRouter(routeMap);

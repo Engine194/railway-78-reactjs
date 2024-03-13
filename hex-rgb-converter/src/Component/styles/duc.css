@@ -1,0 +1,21 @@
+.container{
+    padding: 30px;
+    display: flex;
+}
+.left-input{
+
+}
+.container-btn{
+    display: flex;
+    flex-direction: column;
+}
+.left-btn,
+.right-btn{
+    outline: none;
+    min-width: 25px;
+    min-height: 14px;
+    
+}
+.right-input{
+
+}
