@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../style/inbox.css";
 
 function ChienNguyen() {
+    // Good job
     const [leftText, setLeftText] = useState();
     const [rightText, setRightText] = useState();
 
