@@ -15,6 +15,13 @@ const Thanh = () => {
     setLeft("");
   };
 
+  const handleMoveLeft = () => {
+    setRight("");
+    setLeft(right);
+  };
+
+  const handleInputRight = (e) => setRight(e.target.value);
+
   return (
     <div className="container">
       <div className="input">
@@ -29,12 +36,14 @@ const Thanh = () => {
       </div>
 
       <div className="container-btn">
-        <button className="btn-left">Move to left</button>
+        <button onClick={handleMoveLeft} className="btn-left">Move to left</button>
         <button onClick={handleMoveRight} className="btn-right">Move to right</button>
       </div>
 
       <div className="input">
         <input
+          value={right}
+          onChange={handleInputRight}
           className="input-right"
           type="text"
           name="right"
