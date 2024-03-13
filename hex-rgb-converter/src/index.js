@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import UserList from "./Components/UserList";
 import User from "./Components/User";
 import Nikita from "./Components/Nikita";
-
+import ChienNguyen from "./Components/ChienNguyen";
 export const routeMaps = [
   {
     path: "/",
@@ -31,6 +31,12 @@ export const routeMaps = [
     path: "/nikita",
     element: <Nikita/>,
     label: "Exercise1",
+    isMain: true,
+  }, 
+  {
+    path: "/chiennguyen",
+    element: <ChienNguyen/>,
+    label: "Exercise2",
     isMain: true,
   }
 ];
