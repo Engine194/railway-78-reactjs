@@ -8,6 +8,7 @@ import UserList from "./Components/UserList";
 import User from "./Components/User";
 import App from "./Components/App";
 import DuongVan from "./Components/DuongVan";
+import DuongVanV2 from "./Components/DuongVanV2";
 
 export const routeMaps = [
   {
@@ -32,6 +33,12 @@ export const routeMaps = [
     path: "/duongvan",
     element: <DuongVan />,
     label: "Exercise1",
+    isMain: true,
+  },
+  {
+    path: "/duongvan-v2",
+    element: <DuongVanV2 />,
+    label: "Exercise2",
     isMain: true,
   },
 ];

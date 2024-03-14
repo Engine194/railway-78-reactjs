@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    column-gap: 30px;
+}
+.change-button{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding-top: 10px;
+}
