@@ -1,43 +1,47 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './styles/index.css';
-import reportWebVitals from './reportWebVitals';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./styles/index.css";
+import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import UserList from './Components/UserList';
-import User from './Components/User'
-import App from './Components/App';
+import UserList from "./Components/UserList";
+import User from "./Components/User";
+import App from "./Components/App";
+import DuongVan from "./Components/DuongVan";
 
 export const routeMaps = [
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
     label: "Home",
-    isMain: "true"
+    isMain: "true",
   },
   {
     path: "/user-list",
-    element: <UserList/>,
+    element: <UserList />,
     label: "User list",
-    isMain: "true"
+    isMain: "true",
   },
   {
     path: "user-list/:userId",
-    element: <User/>,
+    element: <User />,
     label: "User detail",
-    isMain: "false"
-  }
-]
+    isMain: "false",
+  },
+  {
+    path: "/duongvan",
+    element: <DuongVan />,
+    label: "Exercise1",
+    isMain: true,
+  },
+];
 
-const router = createBrowserRouter(routeMaps)
+const router = createBrowserRouter(routeMaps);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
