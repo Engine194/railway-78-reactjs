@@ -20,7 +20,7 @@ function ChienNguyen() {
     }
     const rgb2hex = () => {
         const convertedHex = convertRgb2Hex(rgbValue);
-        setHexValue(`#${convertedHex}`);
+        setHexValue(`${convertedHex}`);
     }
 
   return (
