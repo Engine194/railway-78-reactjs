@@ -1,11 +1,14 @@
 import axios from "axios";
 import React, { useState } from "react";
 import "../styles/delete.css";
+import { removeUser } from "../libs/redux/features/user/userSlice";
+import { useDispatch } from "react-redux";
 
 
 const ConfirmDelete = (props) => {
+  const { data, closeModal } = props;
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
-  const { data, removeUser, closeModal } = props;
 
   const handleDelete = () => {
     setLoading(true);
@@ -13,7 +16,7 @@ const ConfirmDelete = (props) => {
     axios
       .delete(USER_URL + "/" + data.id)
       .then(({ data }) => {
-        removeUser(data);
+        dispatch(removeUser(data));
         closeModal();
       })
       .finally(() => {

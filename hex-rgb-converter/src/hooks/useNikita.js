@@ -5,6 +5,8 @@ import { decrement, increment, incrementByAmount } from "../libs/redux/features/
 export const useNikita = () => {
   const [inputA, setInputA] = useState("");
   const [inputB, setInputB] = useState("");
+  const userStore = useSelector(state => state.user);
+  console.log('userStore...', userStore);
   const { value } = useSelector(state => state.counter);
   const dispatch = useDispatch();
 

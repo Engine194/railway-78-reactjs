@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { GENDER_TYPE } from "../utils";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { createUser, updateUser } from "../libs/redux/features/user/userSlice";
 
 const initialUser = {
   email: "",
@@ -12,8 +14,9 @@ const initialUser = {
   id: "",
 };
 
-export default function UserForm({ data, updateUser, pushUser, closeModal }) {
+export default function UserForm({ data, closeModal }) {
   const [user, setUser] = useState(data || initialUser);
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
 
   const handleChangeFactory = (userKey) => {
@@ -41,7 +44,7 @@ export default function UserForm({ data, updateUser, pushUser, closeModal }) {
       axios
         .put(USER_URL + "/" + userParams.id, userParams)
         .then(({ data }) => {
-          updateUser(data);
+          dispatch(updateUser(data));
           closeModal();
         })
         .finally(() => {
@@ -52,7 +55,7 @@ export default function UserForm({ data, updateUser, pushUser, closeModal }) {
       axios
         .post(USER_URL, userParams)
         .then(({ data }) => {
-          pushUser(data);
+          dispatch(createUser(data));
           closeModal();
         })
         .finally(() => {

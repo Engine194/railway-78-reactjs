@@ -7,6 +7,8 @@ import Modal from "./Modal";
 import UserForm from "./UserForm";
 import { GENDER_TYPE } from "../utils";
 import ConfirmDelete from "./ConfirmDelete";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUserList } from "../libs/redux/features/user/userSlice";
 
 const initialShowModal = {
   open: false,
@@ -14,40 +16,12 @@ const initialShowModal = {
 };
 
 export default function UserList() {
-  const [data, setData] = useState([]);
+  const { data } = useSelector(state => state.user);
+  const dispatch = useDispatch();
   const [error, setError] = useState();
   const [showModal, setShowModal] = useState(initialShowModal);
   const [loading, setLoading] = useState(true);
   const [showDelete, setShowDelete] = useState(initialShowModal);
-
-  const pushUser = (newUser) => {
-    setData((prev) => [...prev, newUser]);
-  };
-
-  const updateUser = (updatedUser) => {
-    setData((prev) => {
-      return prev.map((item) => {
-        // item.id = 11, updatedUser.id = "11"
-        if (item.id == updatedUser.id) {
-          return updatedUser;
-        } else {
-          return item;
-        }
-      });
-    });
-  };
-
-  const removeUser = (deletedUser) => {
-    setData((prev) => {
-      return prev.filter((item) => {
-        if (item.id == deletedUser.id) {
-          return false;
-        } else {
-          return true;
-        }
-      });
-    });
-  };
 
   const fetchData = async () => {
     const USER_URL = process.env.REACT_APP_USER_API_URL;
@@ -55,7 +29,7 @@ export default function UserList() {
       setLoading(true);
       try {
         const result = await fetch(USER_URL).then((res) => res.json());
-        setData(result);
+        dispatch(fetchUserList(result));
       } catch (error) {
         setError(error.message);
       } finally {
@@ -156,8 +130,6 @@ export default function UserList() {
         >
           <UserForm
             data={showModal.data}
-            pushUser={pushUser}
-            updateUser={updateUser}
             closeModal={handleCloseModal}
           />
         </Modal>
@@ -168,7 +140,6 @@ export default function UserList() {
         >
           <ConfirmDelete
             data={showDelete.data}
-            removeUser={removeUser}
             closeModal={handleCloseDelete}
           />
         </Modal>
