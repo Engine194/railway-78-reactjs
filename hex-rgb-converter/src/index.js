@@ -8,6 +8,8 @@ import UserList from "./Components/UserList";
 import User from "./Components/User";
 import Nikita from "./Components/Nikita";
 import NikitaV2 from "./Components/NikitaV2";
+import { store } from './libs/redux/store'
+import { Provider } from 'react-redux'
 
 export const routeMaps = [
   {
@@ -47,7 +49,9 @@ const router = createBrowserRouter(routeMaps);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <Provider store={store}>
     <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
 

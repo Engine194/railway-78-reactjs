@@ -3,23 +3,18 @@ import Menu from "./Menu";
 
 import "../styles/nikita.css";
 import { convertHex2Rgb, convertRgb2Hex } from "../utils";
+import { useHoangV2 } from "../hooks/useHoangV2";
 
 const NikitaV2 = () => {
-  const [inputA, setInputA] = useState("");
-  const [inputB, setInputB] = useState("");
+  const {
+      inputA,
+      inputB,
+      handleChangeA,
+      handleChangeB,
+      moveToRight,
+      moveToLeft,
+  } = useHoangV2()
 
-  const handleChangeA = (e) => setInputA(e.target.value);
-  const handleChangeB = (e) => setInputB(e.target.value);
-
-  const moveToRight = () => {
-    const rgb = convertHex2Rgb(inputA);
-    setInputB(rgb);
-  };
-
-  const moveToLeft = () => {
-    const hex = convertRgb2Hex(inputB);
-    setInputA(hex);
-  };
 
   return (
     <>
