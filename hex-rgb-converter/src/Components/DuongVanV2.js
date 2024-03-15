@@ -5,6 +5,26 @@ import Menu from "./Menu";
 import { convertHex2Rgb, convertRgb2Hex } from "../utils/index";
 
 const DuongVanV2 = () => {
+  // const [hex, setHex] = useState("");
+
+  // const [rgb, setRgb] = useState("");
+
+  // const handleChangeHex = (event) => {
+  //   setHex(event.target.value);
+  // };
+
+  // const handleChangeRgb = (event) => {
+  //   setRgb(event.target.value);
+  // };
+
+  // const changeToRgb = () => {
+  //   const val = convertHex2Rgb(hex);
+  //   setRgb(val);
+  // };
+  // const changeToHex = () => {
+  //   const val = convertRgb2Hex(rgb);
+  //   setHex(val);
+  // };
   const [hex, setHex] = useState("");
   const [rgb, setRgb] = useState("");
 
@@ -17,14 +37,13 @@ const DuongVanV2 = () => {
   };
 
   const changeToHex = () => {
-    const val = convertHex2Rgb(hex);
-    setRgb(val);
-  };
-  const changeToRgb = () => {
     const val = convertRgb2Hex(rgb);
     setHex(val);
   };
-
+  const changeToRgb = () => {
+    const val = convertHex2Rgb(hex);
+    setRgb(val);
+  };
   return (
     <div>
       <Menu />
@@ -43,7 +62,7 @@ const DuongVanV2 = () => {
         <div className="container">
           <input
             className="color-input"
-            placeholder=" RGB"
+            placeholder="Hex"
             value={hex}
             onChange={handleChangeHex}
           />
@@ -58,7 +77,7 @@ const DuongVanV2 = () => {
 
           <input
             className="color-input"
-            placeholder=" HEX"
+            placeholder="RGB"
             value={rgb}
             onChange={handleChangeRgb}
           />
