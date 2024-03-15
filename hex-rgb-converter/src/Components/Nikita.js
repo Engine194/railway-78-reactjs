@@ -26,7 +26,7 @@ const Nikita = () => {
         </button>
         <button type="button" onClick={incrementCount}>increment</button>
         <button type="button" onClick={decrementCount}>decrement</button>
-        <button type="button" onClick={incrementByAmount}>Increase by amount</button>
+        <button type="button" onClick={increaseCountWithAmount}>Increase by amount</button>
       </div>
       <input className="nikita-input" value={inputB} onChange={handleChangeB} />
     </div>
