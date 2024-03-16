@@ -1,8 +1,22 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   data: [],
 };
+
+export const fetchUserListThunk = createAsyncThunk(
+  'user/fetchUserListThunk',
+  async (_, thunkApi) => {
+    const USER_URL = process.env.REACT_APP_USER_API_URL;
+    try {
+      const result = await fetch(USER_URL).then((res) => res.json());
+      return result;
+    } catch (error) {
+      thunkApi.rejectWithValue(error);
+    }
+  }
+)
+
 
 export const userSlice = createSlice({
   name: "user",
@@ -35,6 +49,12 @@ export const userSlice = createSlice({
       }
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase( fetchUserListThunk.fulfilled, (state, action) => {
+      const userList = action.payload;
+      state.data = userList;
+    })
+  }
 });
 
 const userReducer = userSlice.reducer;

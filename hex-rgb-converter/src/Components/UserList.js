@@ -8,7 +8,7 @@ import UserForm from "./UserForm";
 import { GENDER_TYPE } from "../utils";
 import ConfirmDelete from "./ConfirmDelete";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUserList } from "../libs/redux/features/user/userSlice";
+import { fetchUserList, fetchUserListThunk } from "../libs/redux/features/user/userSlice";
 
 const initialShowModal = {
   open: false,
@@ -20,7 +20,7 @@ export default function UserList() {
   const dispatch = useDispatch();
   const [error, setError] = useState();
   const [showModal, setShowModal] = useState(initialShowModal);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [showDelete, setShowDelete] = useState(initialShowModal);
 
   const fetchData = async () => {
@@ -73,8 +73,10 @@ export default function UserList() {
     });
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (dispatch) {
+      dispatch(fetchUserListThunk());
+    }
+  }, [dispatch]);
 
   if (error) {
     return <h1>Something went wrong! =\</h1>;
