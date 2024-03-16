@@ -14,6 +14,7 @@ const initialUser = {
 
 export default function UserForm({ data, updateUser, pushUser, closeModal }) {
   const [user, setUser] = useState(data || initialUser);
+  const dispatch = useDispatch()
   const [loading, setLoading] = useState(false);
 
   const handleChangeFactory = (userKey) => {

@@ -7,6 +7,8 @@ import Modal from "./Modal";
 import UserForm from "./UserForm";
 import { GENDER_TYPE } from "../utils";
 import ConfirmDelete from "./ConfirmDelete";
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchUserList } from "../libs/redux/features/user/userSlide";
 
 const initialShowModal = {
   open: false,
@@ -14,7 +16,10 @@ const initialShowModal = {
 };
 
 export default function UserList() {
-  const [data, setData] = useState([]);
+  const userStore = useSelector(state => state.user)
+  const dispatch = useDispatch()
+  console.log("userStore...", userStore)
+  const [ data, setData] = useState([])
   const [error, setError] = useState();
   const [showModal, setShowModal] = useState(initialShowModal);
   const [loading, setLoading] = useState(true);
@@ -56,6 +61,7 @@ export default function UserList() {
       try {
         const result = await fetch(USER_URL).then((res) => res.json());
         setData(result);
+        dispatch(fetchUserList(result))
       } catch (error) {
         setError(error.message);
       } finally {
