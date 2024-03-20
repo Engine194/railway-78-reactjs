@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import UserList from "./Components/UserList";
 import User from "./Components/User";
+import { Chinh } from "./Components/Chinh";
 
 export const routeMaps = [
   {
@@ -18,6 +19,12 @@ export const routeMaps = [
     path: "/user-list",
     element: <UserList />,
     label: "User list",
+    isMain: true,
+  },
+  {
+    path: "/chinh",
+    element: <Chinh/>,
+    label: "Ex1",
     isMain: true,
   },
   {
