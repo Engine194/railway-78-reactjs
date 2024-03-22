@@ -13,15 +13,15 @@ import { Provider } from "react-redux";
 
 export const routeMaps = [
   {
-    path: "/",
-    element: <App />,
-    label: "Home",
+    path: "/user-list",
+    element: <UserList />,
+    label: "User List",
     isMain: true,
   },
   {
-    path: "/user-list",
-    element: <UserList />,
-    label: "User list",
+    path: "/home",
+    element: <App />,
+    label: "Home",
     isMain: true,
   },
   {
@@ -30,18 +30,18 @@ export const routeMaps = [
     label: "User detail",
     isMain: false,
   },
-  {
-    path: "/nikita",
-    element: <Nikita />,
-    label: "Exercise1",
-    isMain: true,
-  },
-  {
-    path: "/nikita-v2",
-    element: <NikitaV2 />,
-    label: "Exercise2",
-    isMain: true,
-  },
+  // {
+  //   path: "/nikita",
+  //   element: <Nikita />,
+  //   label: "Exercise1",
+  //   isMain: true,
+  // },
+  // {
+  //   path: "/nikita-v2",
+  //   element: <NikitaV2 />,
+  //   label: "Exercise2",
+  //   isMain: true,
+  // },
 ];
 
 const router = createBrowserRouter(routeMaps);

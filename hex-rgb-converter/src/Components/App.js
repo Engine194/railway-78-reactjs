@@ -64,6 +64,8 @@ function App() {
 
   return (
     <>
+
+
       <Menu />
       <div className="App">
         <h1 className="greeting-heading">Welcome to Hex-RGB Converter</h1>
