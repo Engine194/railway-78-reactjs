@@ -7,6 +7,8 @@ import Modal from "./Modal";
 import UserForm from "./UserForm";
 import { GENDER_TYPE } from "../utils";
 import ConfirmDelete from "./ConfirmDelete";
+import "../styles/App.css";
+
 
 const initialShowModal = {
   open: false,
@@ -110,10 +112,10 @@ export default function UserList() {
     return (
       <>
         <Menu />
-        <table>
+        <table className="user-list">
           <thead>
             <tr>
-              <th>#</th>
+              <th>STT</th>
               <th>Fullname</th>
               <th>Username</th>
               <th>Email</th>
@@ -121,7 +123,7 @@ export default function UserList() {
               <th>Gender</th>
               <th>Favorite</th>
               <th>
-                Actions {"|"}
+                Actions {"|   "}
                 <button type="button" onClick={handleOpenModal(null)}>
                   new
                 </button>
@@ -149,6 +151,7 @@ export default function UserList() {
             })}
           </tbody>
         </table>
+        <footer className="footer-user-list">Welcome to User List</footer>
         <Modal
           open={showModal.open}
           closeModal={handleCloseModal}

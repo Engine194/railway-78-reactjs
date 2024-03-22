@@ -11,15 +11,15 @@ import NikitaV2 from "./Components/NikitaV2";
 
 export const routeMaps = [
   {
-    path: "/",
-    element: <App />,
-    label: "Home",
-    isMain: true,
-  },
-  {
     path: "/user-list",
     element: <UserList />,
     label: "User list",
+    isMain: true,
+  },
+  {
+    path: "/",
+    element: <App />,
+    label: "Home",
     isMain: true,
   },
   {
@@ -28,18 +28,18 @@ export const routeMaps = [
     label: "User detail",
     isMain: false,
   },
-  {
-    path: "/nikita",
-    element: <Nikita/>,
-    label: "Exercise1",
-    isMain: true,
-  },
-  {
-    path: "/nikita-v2",
-    element: <NikitaV2/>,
-    label: "Exercise2",
-    isMain: true,
-  }
+  // {
+  //   path: "/nikita",
+  //   element: <Nikita/>,
+  //   label: "Exercise1",
+  //   isMain: true,
+  // },
+  // {
+  //   path: "/nikita-v2",
+  //   element: <NikitaV2/>,
+  //   label: "Exercise2",
+  //   isMain: true,
+  // }
 ];
 
 const router = createBrowserRouter(routeMaps);

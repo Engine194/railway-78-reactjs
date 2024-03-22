@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import axios from "axios";
+import Menu from "./Menu";
+import "../styles/App.css";
+
 
 const User = () => {
   const { userId } = useParams();
@@ -21,7 +24,9 @@ const User = () => {
   }, []);
   // render ra UI
   return (
-    <div>
+    <>
+    <Menu />
+    <div className="user-detail">
       <h1>User detail</h1>
       <div>
         <p>Fullname: {user?.fullname}</p>
@@ -31,9 +36,10 @@ const User = () => {
         <p>Date of birth: {user?.dob}</p>
         <p>Favorite: {user?.favorite}</p>
 
-        <footer style={{backgroundColor: 'red'}}>Footer</footer>
       </div>
     </div>
+        <footer className="footer-user-detail">Welcome to User Detail</footer>
+    </>
   );
 };
 

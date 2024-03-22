@@ -179,3 +179,50 @@ input {
 .text-input {
   padding: 12px 12px;
 }
+
+.footer-user-detail {
+  margin-top: 30px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  background-color: greenyellow;
+  height: 30vh;
+  color: black;
+  font-weight: bolder;
+  text-align: center;
+  font-size:xx-large ;
+
+}
+
+.user-detail {
+  background-color: aliceblue;
+  padding-left: 20px;
+  height: 50vh;
+  max-width: 100%;
+  width: 100%;
+  font-weight: bold;
+}
+
+.user-list {
+  background-color: greenyellow;
+  padding-left: 50px;
+  height: 70vh;
+  max-width: 100%;
+  width: 100%;
+  font-weight: bold;
+
+}
+
+
+.footer-user-list {
+  margin-top: 30px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  background-color: gray;
+  height: 10vh;
+  color: black;
+  font-weight: bolder;
+  text-align: center;
+  font-size:xx-large ;
+}
